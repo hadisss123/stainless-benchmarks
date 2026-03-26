@@ -1,1 +1,1 @@
-"# stainless-benchmarks" 
+# stainless-benchmarks
