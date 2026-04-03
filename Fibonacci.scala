@@ -1,6 +1,6 @@
 import stainless.collection.*
 
-object Main {
+object Fibonacci {
   def fibonacci(n: BigInt): BigInt = {
     require(n >= 0)
     if (n == 0) 0
