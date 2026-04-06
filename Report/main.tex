@@ -171,76 +171,80 @@ nisl condimentum leo.
 \mainmatter
 
 \chapter{Introduction}
-As systems evolve and become more complex and advanced, the cost of
-defects in these systems increases. Traditional testing methods, 
-while still useful, would only demonstrate the presence of defects, 
-and not their absence. In response to this, formal verification tools
-developed to provide mathemtical guarantees that a program satisfies
-its specifications. An example of such tools is Stainless, which is
-a deductive verification framework for programs written in the Scala
-programming language. Stainless uses SMT (explain) solvers to verify 
-its programs. It verifies the programs functional correctness,
-termination and safety properties. However, while Stainless appeared
-promising, it has yet
-to be evaluated on a large scale benchmark such as SV-COMP. 
-This project addresses the gap by evaluating Stainless on SV-COMP through
-translating the benchmark programs used in SV-Comp on Java, (maybe C) to Scala.
-\\
-My contributions\dots
-\\
-The problem \dots
-\\
-Delimitations\dots
-\\
-Structure\dots
-\\
-Programs written in various programming languages have to be verified to ensure their correctness.
-Verification tools are used to verify programs in programming languages.
-They are used to find bugs in programs and check if the program is correct semantically
-and that it fulfills its specifications such as its pre and post conditions
-d
-\\
-- No past work
-\\
-- Explain SV-COMP and Stainless
-\\
-- Explain my contribution and the work I'm gonna do
-\\
-- Explain the problem
-\\
-- Motivate delimitations
-\\
-- Explain the structure of the report
-\\
-\lipsum[1]
+As software becomes increasingly deployed to critical systems in society,
+everything from medical devices to vehicles to financial infrastructure. 
+As the complexity of such systems advance, 
+the cost of undetected defects drastically increases aswell.
+A major important element of such software then becomes to ensure and
+verify that they behave correctly and as expected.  
 
-\begin{MarginNote}[3cm]
-  \lipsum[2]
+A common way to ensure this is to have them tested and verified 
+to make sure that such software and systems do what they are 
+intended to do, therefore making them more reliable and safe to use. 
+Traditional testing methods, where a set of inputs gets run through
+the program and the outputs get checked against the corresponding 
+expected results. While this is still useful, 
+it would only demonstrate the presence of defects, 
+and not their absence. For programs with large or even infinite 
+input ranges, testing them in such a way would be infeasible.
 
-  \RED{Use linebreaks\-to\-insert\-hyphens\-where\-needed\-in the margin.}
-\end{MarginNote}
+In response to this, formal verification tools
+developed to provide mathematical guarantees that a program satisfies
+its specifications for \emph{all} valid inputs. An example of such a 
+tool is Stainless \cite{Stainless}, developed at EPFL for programs written
+in the Scala programming language. Stainless is
+a deductive verification framework, meaning that it proves 
+program correctness from formal specifications using mathematical
+logical reasoning. It verifies the programs functional correctness,
+termination and absence of runtime errors. 
 
-Footnotes\Footnote[-1cm]{Like this one. Note the manual vertical offset in the source code.} will go into the margin. They should be used sparingly.
+However, such verifiers aren't guaranteed to be flawless and can 
+fail to verify correct programs, timeout, or produce false evaluations.
+To adress this issue and benchmark verification tools systematically
+, there is an annual verifier benchmark competition
+called SV-COMP \cite{SV-COMP}, which maintains a large amount 
+of benchmarks covering a wide range of verification tasks primarly focused
+on C and Java verifiers and validators. 
+ 
+Although, Stainless appeared promising in different studies (cite studies), 
+it has yet to be evaluated on a large scale benchmark such as SV-COMP.
+This project addresses the gap by evaluating Stainless on SV-COMP benchmarks
+through translating the benchmark programs used in SV-COMP on Java verifiers, 
+to equivalent Scala programs and running Stainless on them. The results 
+are then evaluated and compared to the Java verifiers benchmarks.
 
-\begin{itemize}[label=\leftpointright]
-\item The \texttt{enumitem} package will help you customise lists
-\item Like weird labels like this
-  \begin{itemize}
-  \item Try \texttt{texdoc enumitem} on your command line if you
-    have a local \LaTeX{} installation (and have your mind blown)
-  \end{itemize}
-\end{itemize}
+%\begin{MarginNote}[3cm]
+%  \lipsum[2]
+%
+%  \RED{Use linebreaks\-to\-insert\-hyphens\-where\-needed\-in the margin.}
+%\end{MarginNote}
 
-You can use \texttt{cleveref} to cross-reference in your text.
-For chapters, it will produce something like this: \Cref{cha:background}.
-For sections, it will produce something like this: \Cref{sec:purpose-goals}.
+%Footnotes\Footnote[-1cm]{Like this one. Note the manual vertical offset in the source code.} will go into the margin. They should be used sparingly.
 
-\lipsum[3]
+%\begin{itemize}[label=\leftpointright]
+%\item The \texttt{enumitem} package will help you customise lists
+%\item Like weird labels like this
+%  \begin{itemize}
+%  \item Try \texttt{texdoc enumitem} on your command line if you
+%    have a local \LaTeX{} installation (and have your mind blown)
+%  \end{itemize}
+%\end{itemize}
+
+%You can use \texttt{cleveref} to cross-reference in your text.
+%For chapters, it will produce something like this: \Cref{cha:background}.
+%For sections, it will produce something like this: \Cref{sec:purpose-goals}.
+
+%\lipsum[3]
 
 \section{Purpose and Goals}
 \label{sec:purpose-goals}
 
-\lipsum[4-6]
+The purpose of this project is to evaluate Stainless through SV-COMP 
+benchmarks made for Java by translating them into Scala to run on Stainless 
+The benchmarks are then evaluated by comparing them to the Java verifiers
+benchmarks on SV-Comp's benchmarks. This includes the results of the 
+verifiers compared to what their expected verdict should be, timeout limit
+and CPU usage.
 
 \begin{itemize}
 \item FWIW, this is my favourite list label for unordered lists. I
