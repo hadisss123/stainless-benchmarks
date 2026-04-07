@@ -3,7 +3,6 @@ import stainless.lang.*
 object SatFibonacci02 {
 
   def fibonacci(n: BigInt): BigInt = {
-    // We add a `decreases` clause because Stainless requires termination proofs for recursive functions.
     decreases(if (n < 0) BigInt(0) else n)
     if (n < 1) {
       0
