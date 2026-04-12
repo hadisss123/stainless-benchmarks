@@ -1,0 +1,4 @@
+*.bin
+*.class
+.stainless-cache/
+automationTranslate.py
