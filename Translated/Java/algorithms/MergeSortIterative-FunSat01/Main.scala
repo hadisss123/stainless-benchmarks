@@ -1,7 +1,5 @@
 import stainless.lang.*
 
-
-
 /*def iterativeMergesort(a: Array[Int]): Unit = {
   require(a.length > 0)
   val aux = new Array[Int](a.length)
@@ -64,7 +62,12 @@ def merge(a: Array[Int], aux: Array[Int], lo: Int, mid: Int, hi: Int): Unit = {
   }
 }*/
 
-def recursiveMergesort(a: Array[Int], aux: Array[Int], lo: Int, hi: Int): Unit = {
+def recursiveMergesort(
+    a: Array[Int],
+    aux: Array[Int],
+    lo: Int,
+    hi: Int
+): Unit = {
   require(a.length > 0)
   require(aux.length == a.length)
   require(lo >= 0 && lo <= a.length)
