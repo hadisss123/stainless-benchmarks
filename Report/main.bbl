@@ -1,26 +1,8 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{0}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[Dijkstra(1968)]{Dijkstra_1968}
-Edsger~W. Dijkstra.
-\newblock {G}o {T}o {S}tatement {C}onsidered {H}armful.
-\newblock \emph{Communications of the {ACM}}, 11\penalty0 (3):\penalty0 147--148, 1968.
-\newblock \doi{10.1145/362929.362947}.
-
-\bibitem[{Joint Task Force on Computing Curricula} et~al.(2013){Joint Task Force on Computing Curricula}, {Association for Computing Machinery (ACM)}, and {IEEE Computer Society}]{Acm_Curriculum_2013}
-{Joint Task Force on Computing Curricula}, {Association for Computing Machinery (ACM)}, and {IEEE Computer Society}.
-\newblock \emph{{C}omputer {S}cience {C}urricula 2013: {C}urriculum {G}uidelines for {U}ndergraduate {D}egree {P}rograms in {C}omputer {S}cience}.
-\newblock ACM, New York, NY, USA, 2013.
-\newblock ISBN 978-1-4503-2309-3.
-\newblock 999133.
-
-\bibitem[MITRE(2018)]{CWE_193}
-MITRE.
-\newblock {C}ommon {W}eakness {E}numeration: {CWE-193}: {O}ff-by-one {E}rror, December 2018.
-\newblock \url{https://cwe.mitre.org/data/definitions/193.html}.
 
 \end{thebibliography}

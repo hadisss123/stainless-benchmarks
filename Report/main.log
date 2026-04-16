@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.26)  7 APR 2026 01:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.26)  15 APR 2026 19:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -623,17 +623,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  [5] [6
 
-] (./main.lot
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 3.
-)
+] (./main.lot)
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
- [7{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}] [8
+ [7] [8
 
 ]
 Chapter 1.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 10.95pt on input line 193.
 
 Package natbib Warning: Citation `Stainless' on page 1 undefined on input line 194.
 
@@ -642,30 +641,11 @@ Package natbib Warning: Citation `SV-COMP' on page 1 undefined on input line 205
 
 [1
 
-]
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 10.95pt on input line 270.
-
-Overfull \hbox (1.9565pt too wide) in paragraph at lines 272--272
-[]\T1/LinuxLibertineT-TLF/m/n/10.95 (-10) Nam dui li-gula, frin-gilla a, eui-smod so-da-les, sol-li-ci-tu-din vel, wisi. Morbi
- []
-
-[2{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_z254vq.enc}]
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 298.
- (/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd
-File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
-)
-LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 298.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `zi4' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
- [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}] [4
-
-]
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}] [2]
 Chapter 2.
-[5] [6
+[3
+
+] [4
 
 ]
 Chapter 3.
@@ -673,48 +653,66 @@ Chapter 3.
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 348.
+(Font)              scaled to size 10.0pt on input line 286.
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 286.
+ (/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd
+File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
+)
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 348.
+(Font)              scaled to size 8.99994pt on input line 286.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `zi4' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 348.
+(Font)              scaled to size 8.99994pt on input line 286.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 361.
+(Font)              scaled to size 9.0pt on input line 299.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 361.
-LaTeX Font Info:    Trying to load font information for TS1+zi4 on input line 377.
+(Font)              scaled to size 9.0pt on input line 299.
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 9.85492pt on input line 307.
+LaTeX Font Info:    Trying to load font information for TS1+zi4 on input line 315.
  (/usr/share/texlive/texmf-dist/tex/latex/inconsolata/ts1zi4.fd
 File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 377.
+(Font)              scaled to size 9.85492pt on input line 315.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [7{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}]
-Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 394.
- [8]
+ [5{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}]
+Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 332.
+ [6]
 Chapter 4.
+[7
+
+] [8]
+Chapter 5.
 [9
 
 ] [10]
-Chapter 5.
+Chapter 6.
 [11
 
 ] [12]
-Chapter 6.
+Chapter 7.
 [13
 
-] [14]
-Chapter 7.
-[15
+] (./main.bbl [14]
 
-] (./main.bbl [16])
+Package natbib Warning: Empty `thebibliography' environment on input line 8.
+
+)
 
 Package natbib Warning: There were undefined citations.
 
-[17
+
+Package caption Warning: Unused \captionsetup[figure] on input line 48.
+See the caption package documentation for explanation.
+
+[15
 
 ] (./main.aux)
  ***********
@@ -722,21 +720,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B088C4F23D1F8E0EFCF1F2646F9B3E26;943.
+(rerunfilecheck)             Checksum: 0C36956D95106ACC9E63C09A3772D97A;1518.
  ) 
 Here is how much of TeX's memory you used:
- 20947 strings out of 474222
- 361689 string characters out of 5748733
+ 20887 strings out of 474222
+ 360352 string characters out of 5748733
  1941975 words of memory out of 5000000
- 42678 multiletter control sequences out of 15000+600000
- 645569 words of font info for 166 fonts, out of 8000000 for 9000
+ 42644 multiletter control sequences out of 15000+600000
+ 637827 words of font info for 155 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,11n,117p,1060b,1799s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTZ.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (25 pages, 448264 bytes).
+ 79i,11n,117p,1060b,1803s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb>
+Output written on main.pdf (23 pages, 339597 bytes).
 PDF statistics:
- 286 PDF objects out of 1000 (max. 8388607)
- 235 compressed objects within 3 object streams
- 69 named destinations out of 1000 (max. 500000)
- 53321 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 253 PDF objects out of 1000 (max. 8388607)
+ 212 compressed objects within 3 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 49257 words of extra memory for PDF output out of 51595 (max. 10000000)
 

@@ -174,7 +174,7 @@ nisl condimentum leo.
 As software becomes increasingly deployed to critical systems in society,
 everything from medical devices to vehicles to financial infrastructure. 
 As the complexity of such systems advance, 
-the cost of undetected defects drastically increases aswell.
+the cost of undetected defects drastically increases as well.
 A major important element of such software then becomes to ensure and
 verify that they behave correctly and as expected.  
 
@@ -211,7 +211,7 @@ it has yet to be evaluated on a large scale benchmark such as SV-COMP.
 This project addresses the gap by evaluating Stainless on SV-COMP benchmarks
 through translating the benchmark programs used in SV-COMP on Java verifiers, 
 to equivalent Scala programs and running Stainless on them. The results 
-are then evaluated and compared to the Java verifiers benchmarks.
+are then evaluated and compared to the Java verifiers' benchmarks.
 
 %\begin{MarginNote}[3cm]
 %  \lipsum[2]
@@ -239,110 +239,48 @@ are then evaluated and compared to the Java verifiers benchmarks.
 \section{Purpose and Goals}
 \label{sec:purpose-goals}
 
-The purpose of this project is to evaluate Stainless through SV-COMP 
-benchmarks made for Java by translating them into Scala to run on Stainless 
-The benchmarks are then evaluated by comparing them to the Java verifiers
-benchmarks on SV-Comp's benchmarks. This includes the results of the 
-verifiers compared to what their expected verdict should be, timeout limit
-and CPU usage.
-
-\begin{itemize}
-\item FWIW, this is my favourite list label for unordered lists. I
-  find bullets too ``clumsy.'' If you do not like it, you can
-  override the default settings (see the source).
-\item But your thesis is your thesis. And, ofc, don't use words
-  like FWIW, ofc, and don't in a thesis text.
-
-  \begin{itemize}
-  \item You can nest lists if you want.
-
-    \begin{itemize}
-    \item But do not go overboard.
-    \end{itemize}
-
-  \end{itemize}
-  
+The purpose of this project is to evaluate Stainless on SV-COMP 
+benchmarks which would adress the lack of systematic evaluation
+of Stainless. Since SV-COMP's benchmarks are written in C and Java, it won't
+be possible to evaluate Stainless on them directly. This project focuses solely on the
+Java benchmarks, for the reason being that Java and Scala are structurally similar which
+would make the translation process manageable. A representative subset of those Java
+benchmarks will be translated to Scala programs that Stainless can process. The subset
+chosen has a feasible amount of benchmarks for the time period of this project
+and excludes all the benchmarks that are not translatable to Scala programs
+that would be compatible with Stainless. Such untranslateable programs include:
+\begin{itemize} 
+  \item Programs that use Java specific features that are not supported by Stainless
+  \item Programs that use external Java packages that are not available in Stainless
 \end{itemize}
 
-This is how you typeset descriptions:
+The translated benchmarks are then run on Stainless and the outcomes
+are compared against both the expected verdicts of the benchmarks
+which every SV-COMP benchmark has and against the results 
+for the Java verifiers. The evaluation considers the verification outcomes
+(valid, invalid, timeout or unknown) as well as the verification time
+and CPU usage.
 
-\begin{description}
-\item[Beach Boys] \lipsum[1]
-\item[The Ronettes] \lipsum[2]
-\end{description}
-
-Enumerated lists:
-
-\begin{enumerate}
-\item One
-\item Two
-\end{enumerate}
-
-Note that you can resume lists.
-
-\begin{enumerate}[resume]
-\item One
-\item Two \label{lst:two}
-\end{enumerate}
-
-And reference back to individual list items, \eg{}~\cref{lst:two}.
+This project aims to establish a clearer picture of where Stainless stands
+relative to other verification tools on a standardized set of benchmarks.
+As well as to identify which types of programs Stainless handles well
+and which types of programs it struggles with.
 
 \section{Thesis Outline}
 \label{sec:thesis-outline}
 
-\lipsum[7]
-
-\begin{figure}[t]
-  \begin{center}
-    \vspace*{1em}
-    \verb+\includegraphics[width=0.9\linewidth]{image.pdf}+
-    \vspace*{1em}
-  \end{center}
-  \caption{This is a figure, it will be placed top-most of a page (if possible).}
-  \label{fig:example-1}
-\end{figure}
-
-\begin{figure*}[t]
-  \begin{center}
-    \vspace*{1em}
-    \verb+\includegraphics[width=0.9\linewidth]{image.pdf}+
-    \vspace*{1em}
-  \end{center}
-\caption[Check the source to see how to customise a figure's LoF entry.]{This is a wider figure, it too will be placed top-most of a page (if possible).}
-  \label{fig:example-2}
-\end{figure*}
-
-
-\begin{table}[b]
-  \caption{This is a table, it will be placed at the bottom of a
-    page (if possible). Note that captions for tables are placed
-    \emph{above} the table.}
-  \begin{center}
-    \begin{tabular}{lll}
-      \toprule
-      $A$ & $B$ & $C$ \\
-      \midrule
-      $A$ & \multicolumn{2}{c}{$B-C$} \\
-      $A$ & \Yes{} & \No{} \\
-      \bottomrule
-    \end{tabular}
-  \end{center}
-  
-  \label{tab:example-1}
-\end{table}
 
 \chapter{Background}
 \label{cha:background}
 
-This chapter typically contains a discussion of the related work.
-BibTeX is a great way to manage bibliography information. If you
-use Emacs, tools like RefTeX will help you insert references into
-your code. Given that we are not constrained for space, we can use
-citations that look like this: \citep{Acm_Curriculum_2013,
-  CWE_193}. To give the text a bit better flow, you can sometimes
-work them into the text. Using numbered references is allowed but
-it will cause them to be much like Dijkstra's
-\citeyearpar{Dijkstra_1968} dreaded GOTO's.
+\section{Scala}
+
+\section{Stainless}
+
+\section{SV-COMP}
+
+\section{Difference between Java verifiers and Stainless}
+
 
 \chapter{Methodology}
 \lipsum[1] Code \c{int inline = ++x;} looks like so:

@@ -1,10 +1,14 @@
 \babel@toc {british}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Purpose and Goals}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Thesis Outline}{3}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Background}{5}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Methodology}{7}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Design}{9}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Implementation}{11}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Evaluation}{13}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusions}{15}{chapter.7}%
+\contentsline {section}{\numberline {1.2}Thesis Outline}{2}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Background}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Scala}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Stainless}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}SV-COMP}{3}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Difference between Java verifiers and Stainless}{3}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Methodology}{5}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Design}{7}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Implementation}{9}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Evaluation}{11}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusions}{13}{chapter.7}%
