@@ -3,10 +3,10 @@
 \contentsline {section}{\numberline {1.1}Purpose and Goals}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Thesis Outline}{2}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Background}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Scala}{3}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Stainless}{3}{section.2.2}%
-\contentsline {section}{\numberline {2.3}SV-COMP}{3}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Difference between Java verifiers and Stainless}{3}{section.2.4}%
+\contentsline {section}{\numberline {2.1}Formal Verification}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Scala}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Stainless}{4}{section.2.3}%
+\contentsline {section}{\numberline {2.4}SV-COMP}{4}{section.2.4}%
 \contentsline {chapter}{\numberline {3}Methodology}{5}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Design}{7}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Implementation}{9}{chapter.5}%

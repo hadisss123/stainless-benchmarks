@@ -7,8 +7,10 @@
 \usepackage[sb]{libertine}
 \usepackage[scale=0.9]{inconsolata}
 
+
+
 \usepackage[sf]{titlesec}
-\usepackage[square,sort,colon,authoryear]{natbib}
+\usepackage[numbers]{natbib}
 %\usepackage[export]{adjustbox}
 
 \usepackage{
@@ -191,7 +193,7 @@ input ranges, testing them in such a way would be infeasible.
 In response to this, formal verification tools
 developed to provide mathematical guarantees that a program satisfies
 its specifications for \emph{all} valid inputs. An example of such a 
-tool is Stainless \cite{Stainless}, developed at EPFL for programs written
+tool is Stainless~\cite{Stainless}, developed at EPFL for programs written
 in the Scala programming language. Stainless is
 a deductive verification framework, meaning that it proves 
 program correctness from formal specifications using mathematical
@@ -202,7 +204,7 @@ However, such verifiers aren't guaranteed to be flawless and can
 fail to verify correct programs, timeout, or produce false evaluations.
 To adress this issue and benchmark verification tools systematically
 , there is an annual verifier benchmark competition
-called SV-COMP \cite{SV-COMP}, which maintains a large amount 
+called SV-COMP~\cite{SV-COMP}, which maintains a large amount 
 of benchmarks covering a wide range of verification tasks primarly focused
 on C and Java verifiers and validators. 
  
@@ -272,14 +274,69 @@ and which types of programs it struggles with.
 
 \chapter{Background}
 \label{cha:background}
+This chapter goes over the foundational concepts
+and tools necessary to be able to understand this project, the
+work being done, and the results. I will start by going over formal
+verification in general, then go over Scala and Stainless and
+finally go over SV-COMP and its benchmarks and infrastructure.
+
+
+\section{Formal Verification}
+
+Formal verification, the underlying concept of 
+this project, is the process of 
+mathematically proving that a program satisfies a set 
+of specifications for all possible inputs. 
+On the other hand, testing would only be able to demonstrate 
+the presence of bugs on a subset of inputs while formal 
+verification provides guarantees that would hold universally. 
+This makes formal verification particularly valuable in 
+domains where safety is crucial and the cost of 
+undetected defects is high.
+
+There are multiple approaches to formal verification. 
+\textbf{Model Checking} is the process of 
+    exhaustively exploring a program's state space to 
+    check whether a property holds or not. 
+    However, it can suffer from state space explosion for 
+    large programs~\cite{ModelChecking}.
+\textbf{Static Analysis} approximates the program's behavior 
+    to infer properties without having to execute the actual 
+    program, meaning that it trades precision for scalability~\cite{StaticAnalysis}.
+\textbf{Deductive Verification}, the approach most
+    relevant to this project, requires that the developer 
+    annotates the program with some formal specifications to 
+    describe the expected behaviour of the program, such 
+    as preconditions and postconditions on functions, loop invariants, 
+    and assertions. The verifier then uses logical reasoning to prove that the 
+    implementation satisfies them~\cite{DeductiveVerification}.
+
+\emph{SMT} (Satisfiability Modulo Theories) solvers are typically
+relied on by deductive verifiers as they are used to 
+solve the logical formulas that are generated from the 
+program specifications~\cite{SMTSolvers}. 
+When a verifier cannot prove a proof obligation, it passes the
+negation to an SMT solver. The SMT solver would in turn
+check the negation and if the negation is unsatisfiable, then the property
+holds. Otherwise, if it is satisfiable, then a counterexample
+can be produced from the SMT solver and returned to 
+the verifier. SMT solvers are therefore a core part of 
+Stainless's verification process, which is discussed further
+in Section~\ref{sec:stainless}.
 
 \section{Scala}
 
+Scala is a statically typed programming language
+developed by Martin Odersky and first released in 2004~\cite{ScalaOrigin} 
+at EPFL. Similarly to Java, Scala also runs on the 
+\emph{JVM} (Java Virtual Machine)~\cite{JVM}. Scala combines
+object-oriented programming with functional programming 
+concepts. 
+
 \section{Stainless}
+\label{sec:stainless}
 
 \section{SV-COMP}
-
-\section{Difference between Java verifiers and Stainless}
 
 
 \chapter{Methodology}
@@ -348,7 +405,7 @@ Probably better to use cleveref: \cref{lst:foo}.
 \chapter{Conclusions}
 \lipsum
 
-\bibliographystyle{plainnat}
+\bibliographystyle{vancouver}
 \bibliography{main}
 
 \end{document}
