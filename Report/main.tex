@@ -104,6 +104,20 @@
 
 \renewcommand{\c}[1]{\lstinline[style=std]@#1@}
 
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{orange},
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=8pt,
+  frame=single,
+  breaklines=true,
+  captionpos=b,
+}
+
 \lstdefinestyle{std}{
   language=java,
   basicstyle=\small\tt\color{black},
@@ -125,6 +139,17 @@
   moredelim=[is][\textit]{___}{___},
   moredelim=[is][\textbf]{__*}{*__},
   numberbychapter=true
+}
+
+\lstdefinelanguage{Scala}{
+  keywords={def, val, var, class, object, extends, trait, 
+             case, match, if, else, return, import, new,
+             true, false, override, sealed, abstract, require},
+  otherkeywords={=>, <-, @},
+  sensitive=true,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
 }
 
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
@@ -324,86 +349,70 @@ the verifier. SMT solvers are therefore a core part of
 Stainless's verification process, which is discussed further
 in Section~\ref{sec:stainless}.
 
-\section{Scala}
-
-Scala is a statically typed programming language
-developed by Martin Odersky and first released in 2004~\cite{ScalaOrigin} 
-at EPFL. Similarly to Java, Scala also runs on the 
-\emph{JVM} (Java Virtual Machine)~\cite{JVM}. Scala combines
-object-oriented programming with functional programming 
-concepts. 
-
 \section{Stainless}
 \label{sec:stainless}
+In this section, I will give an overview of Stainless, the deductive
+verification framework used in this project. I will describe
+how it works, its verification process and the subset of Scala
+it supports, known as Pure Scala.
+
+Stainless~\cite{Stainless} is a deductive verifier used to prove correctness 
+properties on Scala programs. Stainless takes Scala programs
+annotated with specifications such as pre- and postconditions
+and attempts to prove their correctness using SMT solvers.
+Properties that Stainless verifies include, termination, 
+absence of runtime errors and functional correctness.
+
+Users annotate the Scala programs with specifications and 
+preconditions such as \texttt{require} and postconditions such as \texttt{ensuring}. 
+Stainless will then attempt to prove that the specifications hold
+for all the possible inputs of the functions, using SMT solvers rather
+than testing.
+For each condition, Stainless reports one of four verdicts, 
+\texttt{valid}, \texttt{invalid} (with a counterexample), 
+\texttt{timeout} or \texttt{unknown}.
+
+The \texttt{add} function from Listing~\ref{lst:add} is a simple example
+of a Scala function that is annotated with preconditions
+using \texttt{require} and postconditions using \texttt{ensuring}.
+The \texttt{require} condition is checked once the function is called
+whilst the \texttt{ensuring} condition is checked once the 
+function has terminated. In this example, if the 
+postcondition is violated for any input values that satisfy
+the precondition, then Stainless will report an invalid
+verdict with a counterexample. With this specific
+example, the postcondition will always be met if the precondition 
+is met, therefore it would be reported as valid by Stainless.
+
+\begin{lstlisting}[language=Scala, caption={A simple annotated 
+Scala function verified by Stainless.}, label={lst:add}]
+  def add(x: BigInt, y: BigInt): BigInt = {
+    require(x > 0 && y > 0)
+    x + y
+  }.ensuring(res => res > x && res > y)
+\end{lstlisting}
+
+Stainless is however not compatible with all Scala programs.
+It only supports a subset of Scala known as Pure Scala (see Section~\ref{sec:pure_scala}).
+
+\subsection{Pure Scala}
+\label{sec:pure_scala}
+
+Pure Scala is a subset of Scala that is used for Stainless verification.
+The 
+
 
 \section{SV-COMP}
 
-
 \chapter{Methodology}
-\lipsum[1] Code \c{int inline = ++x;} looks like so:
-
-\begin{Code}
-public class HelloWorld<T> extends Something<T> {
-  public static void main(String[] args) {
-    System.out.println("Hello, world!");
-  }
-}
-\end{Code}
-
-You can also get it with line numbers:
-
-\begin{Code_Numbered}
-public class HelloWorld<T> extends Something<T> {
-  public static void main(String[] args) {
-    System.out.println("Hello, world!"); @\label{code:hello}@
-  }
-}
-\end{Code_Numbered}
-
-
-You can refer to lines like this: \verb+\cref{code:hello}+ (gives you \cref{code:hello}, see source for more details).
-
-Verbatim text is set in a monospaced typewriter font:
-
-\begin{verbatim}
-----------,
-          |           ASCII art!
-          '--> (*)
-\end{verbatim}
-
-\lipsum[2-4]
-
-\begin{table}[!h]
-  \caption{bar}
-  \label{tab:bar}
-\end{table}
-
-\begin{listing*}[t]
-\begin{Code_Numbered}
-public class HelloWorld<T> extends Something<T> {
-  public static void main(String[] args) {
-    System.out.println("Hello, world!"); @\label{code:hello:2}@
-  }
-}
-\end{Code_Numbered}
-\caption{If you like, you can have code listings inside a \c{listing} float.}
-\label{lst:foo}
-\end{listing*}
-
-Referencing Listing~\ref{lst:foo}.
-Probably better to use cleveref: \cref{lst:foo}.
 
 \chapter{Design}
-\lipsum
 
 \chapter{Implementation}
-\lipsum
 
 \chapter{Evaluation}
-\lipsum
 
 \chapter{Conclusions}
-\lipsum
 
 \bibliographystyle{vancouver}
 \bibliography{main}

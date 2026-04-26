@@ -12,10 +12,4 @@ Beyer D. {C}ompetition on {S}oftware {V}erification ({SV-COMP}); 2026.
 Barrett C, Fontaine P, Tinelli C. {T}he {S}atisfiability {M}odulo {T}heories {L}ibrary ({SMT-LIB}); 2016.
 \newblock \url{https://smt-lib.org/}.
 
-\bibitem{ScalaOrigin}
-Odersky M, Altherr P, Cremet V, Emir B, Maneth S, Micheloud S, et~al.
-\newblock {A}n {O}verview of the {S}cala {P}rogramming {L}anguage.
-\newblock Technical Report, EPFL. 2004.
-\newblock \url{https://scala-lang.org/docu/files/ScalaOverview.pdf}.
-
 \end{thebibliography}
