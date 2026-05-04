@@ -12,4 +12,20 @@ Beyer D. {C}ompetition on {S}oftware {V}erification ({SV-COMP}); 2026.
 Barrett C, Fontaine P, Tinelli C. {T}he {S}atisfiability {M}odulo {T}heories {L}ibrary ({SMT-LIB}); 2016.
 \newblock \url{https://smt-lib.org/}.
 
+\bibitem{StainlessPureScala}
+{EPFL LARA}. {P}ure {S}cala {S}tainless {D}ocumentation; 2024.
+\newblock Accessed: 2025.
+\newblock \url{https://epfl-lara.github.io/stainless/purescala.html}.
+
+\bibitem{KuncakStainlessTutorial}
+Kuncak V, Hamza J.
+\newblock Stainless Verification System Tutorial.
+\newblock In: Formal Methods in Computer Aided Design, {FMCAD} 2021, New Haven, CT, USA, October 19-22, 2021. {IEEE}; 2021. p. 2-7.
+\newblock Available from: \url{https://doi.org/10.34727/2021/isbn.978-3-85448-046-4\_2}.
+
+\bibitem{StainlessImperative}
+{EPFL LARA}. Imperative and Other Effects --- {Stainless} Documentation; 2024.
+\newblock Accessed: 2025.
+\newblock \url{https://epfl-lara.github.io/stainless/imperative.html}.
+
 \end{thebibliography}
