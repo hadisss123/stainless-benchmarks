@@ -7,9 +7,6 @@ Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: main.bib
-Warning--I didn't find a database entry for "ModelChecking"
-Warning--I didn't find a database entry for "StaticAnalysis"
-Warning--I didn't find a database entry for "DeductiveVerification"
 Warning--empty author and editor in Stainless
 Warning--missing publisher in Stainless
 Warning--empty author and editor in SV-COMP
@@ -20,45 +17,48 @@ Warning--empty author and editor in StainlessPureScala
 Warning--missing publisher in StainlessPureScala
 Warning--empty author and editor in StainlessImperative
 Warning--missing publisher in StainlessImperative
-You've used 6 entries,
+Warning--empty pages in SV-COMP2026
+Warning--empty author and editor in SVBenchmarks
+Warning--missing publisher in SVBenchmarks
+You've used 13 entries,
             3507 wiz_defined-function locations,
-            730 strings with 5858 characters,
-and the built_in function-call counts, 4468 in all, are:
-= -- 487
-> -- 39
-< -- 11
-+ -- 19
-- -- 10
-* -- 299
-:= -- 536
-add.period$ -- 17
-call.type$ -- 6
-change.case$ -- 7
-chr.to.int$ -- 20
-cite$ -- 16
-duplicate$ -- 367
-empty$ -- 439
-format.name$ -- 11
-if$ -- 1044
+            776 strings with 7198 characters,
+and the built_in function-call counts, 13752 in all, are:
+= -- 1519
+> -- 123
+< -- 64
++ -- 58
+- -- 28
+* -- 977
+:= -- 1545
+add.period$ -- 39
+call.type$ -- 13
+change.case$ -- 14
+chr.to.int$ -- 125
+cite$ -- 26
+duplicate$ -- 1188
+empty$ -- 1338
+format.name$ -- 33
+if$ -- 3237
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 46
-newline$ -- 31
-num.names$ -- 6
-pop$ -- 124
+int.to.str$ -- 13
+missing$ -- 106
+newline$ -- 65
+num.names$ -- 13
+pop$ -- 311
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 107
+skip$ -- 263
 stack$ -- 0
-substring$ -- 587
-swap$ -- 111
-text.length$ -- 7
+substring$ -- 2071
+swap$ -- 298
+text.length$ -- 31
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 10
-while$ -- 32
-width$ -- 7
-write$ -- 65
+warning$ -- 13
+while$ -- 84
+width$ -- 15
+write$ -- 141
 (There were 13 warnings)

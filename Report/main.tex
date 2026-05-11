@@ -396,6 +396,14 @@ Scala function verified by Stainless.}, label={lst:add}, float]
   }.ensuring(res => res > x && res > y)
 \end{lstlisting}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=1.1\textwidth]{images/add.png}
+  \caption{The summary Stainless provides after verifying the add function in 
+  Listing~\ref{lst:add}.}
+  \label{fig:add}
+\end{figure}
+
 
 Stainless is however not compatible with all Scala programs.
 It only supports a subset of Scala known as Pure Scala.
@@ -442,9 +450,326 @@ which Stainless verifies as holding on each iteration of the loop and
 on termination of the loop.  
 
 \section{SV-COMP}
+\label{sec:svcomp}
+ 
+In this section, I give an overview of SV-COMP, the benchmark competition
+whose tasks form the basis of this project.
+I will describe how the competition is organised, how its benchmarks are
+structured, and focus more on explaining the Java category that is directly
+relevant to the translation and evaluation work done in this project.
+
+SV-COMP~\cite{SV-COMP} (Competition on Software Verification) is an annual
+international competition that compares software verification tools on a
+large set of verification tasks.
+The most recent edition, SV-COMP 2026, evaluated 61 verifiers and
+16 validators for C programs and 11 verifiers and 3 validators for Java
+programs~\cite{SV-COMP2026}.
+All benchmark programs and their specifications are publicly
+available in the \texttt{sv-benchmarks} repository, and any researcher may
+contribute new tasks which fit the competition's quality
+criteria~\cite{SV-COMP}.
+ 
+\subsection{Benchmark Structure}
+\label{sec:svcomp-structure}
+ 
+Each verification task in SV-COMP consists of a program to be
+verified, properties which the program is expected to satisfy, and an
+expected verdict.
+The expected verdict is either \texttt{TRUE} if the program is known to
+satisfy the property, or \texttt{FALSE} if it is known to violate it.
+This expected verdict is used to determine whether a verifier's output is
+correct or not.
+ 
+A verifier participating in SV-COMP produces one of the following outcomes
+for each task:
+ 
+\begin{itemize}
+  \item \texttt{TRUE}, meaning the verifier concludes that the program satisfies
+        the properties for all possible executions.
+  \item \texttt{FALSE}, meaning the verifier concludes that one or all of the
+  properties are violated and typically produces a counterexample.
+  \item \texttt{UNKNOWN}, meaning the verifier could not reach a conclusion.
+  \item \texttt{Timeout} or \texttt{Out Of Memory}, meaning the verifier exhausted
+        its allocated resources without producing a result.
+\end{itemize}
+ 
+The scoring of each verifier is determined by the correctness of its results.
+Correct results are awarded points, whilst incorrect results are penalised.
+A correct \texttt{TRUE} or correct \texttt{FALSE} result earns points,
+whereas an incorrect result (a \texttt{TRUE} verdict on a task that has an
+expected verdict of \texttt{FALSE}, or vice versa) results in a penalty.
+This scoring scheme is intentional, as it is considered worse to
+wrongly assert correctness of a buggy program than to %change->%
+admit inability to decide.
+ 
+\subsection{Categories}
+\label{sec:svcomp-categories}
+ 
+The benchmark tasks are organised into a hierarchy of categories.
+At the top level, SV-COMP 2026 has several meta categories for C
+programs, including \texttt{C.ReachSafety}, \texttt{C.MemSafety},
+\texttt{C.Concurrency}, \texttt{C.NoOverflows}, \texttt{C.Termination},
+and \texttt{C.SoftwareSystems}, all accumulated under \texttt{C.Overall}.
+There is also a separate meta category for Java programs called
+\texttt{Java.Overall}~\cite{SV-COMP2026} which is the focus of the
+translation work in this project.
+ 
+The C categories contain the vast majority of tasks. For example, in
+the 2026 edition, \texttt{C.Overall} alone contained 36\,402 tasks.
+The Java category is considerably smaller, 1\,731 tasks in 2026,
+covering two properties for Java programs.
+
+\subsection{Java.Overall}
+\label{sec:svcomp-java}
+
+Since this project focuses on translating Java benchmarks to Scala, the
+\texttt{Java.Overall} category is the directly relevant part of SV-COMP.
+In SV-COMP 2026, it contained two base categories:
+\texttt{Java.valid-assert.Main} and \texttt{Java.no-runtime-exception.Main}~\cite{SV-COMP2026}.
+ 
+The \texttt{valid-assert} property requires that all assertions in
+the program hold for every possible execution.
+In the Java benchmarks, this is encoded directly through
+\texttt{assert} statements in the source code. The expected verdict is
+\texttt{TRUE} if no assertion can be violated for any possible input, and
+\texttt{FALSE} if an execution reaches a failing assertion.
+The \texttt{no-runtime-exception} property requires that the Java
+program does not throw a runtime exception under any input.
+ 
+The Java benchmarks in the repository are drawn from a range of sources,
+including test suites from established Java verification tools such as
+\texttt{JayHorn} and \texttt{JBMC}, as well as
+programs from algorithmic benchmark suites~\cite{SV-COMP2026}.
+This variety means that the tasks range from small programs with a
+single algorithmic pattern to more complex programs with 
+loops and recursion.
+ 
+\subsection{Benchmark Infrastructure}
+\label{sec:svcomp-infra}
+ 
+SV-COMP uses BenchExec~\cite{BenchExec} to execute and measure all
+verification runs in a controlled and reproducible way.
+BenchExec enforces resource limits on each run. In 2026 these were
+15\,GB of memory and 15 minutes of cumulative CPU time on 4 processing
+units. BenchExec also precisely measures CPU time and memory usage for each task.
+This execution environment ensures that the results of the different tools
+and different editions of the competition are comparable.
+
+In this project, Stainless is not run inside the official BenchExec
+infrastructure, as integrating Stainless into the SV-COMP toolchain
+is beyond the scope of this project.
+Instead, the translated benchmarks are run with Stainless directly and
+the outcomes are compared against the expected SV-COMP verdicts and the
+results reported by Java verifiers in the competition.
 
 \chapter{Methodology}
+\label{cha:methodology}
+ 
+This chapter describes the methodology I used to evaluate Stainless on
+SV-COMP benchmarks. I followed an empirical methodology in
+which I treated Stainless as the system under study and its verification
+outcomes on adapted SV-COMP benchmarks served as the data. The
+chapter is organised as follows. \Cref{sec:benchmark-selection} describes
+how I chose the subset of benchmarks to evaluate.
+\Cref{sec:translation} describes the process of translating the selected
+Java benchmarks to Scala programs suitable for Stainless.
+\Cref{sec:annotation} describes how I added formal specifications to
+the translated programs. \Cref{sec:experimental-setup} describes the
+experimental setup I used to run Stainless on the translated benchmarks.
+Finally, \Cref{sec:data-collection} describes how I collected the results and 
+how I analysed and compared them against the expected
+SV-COMP verdicts and the results reported by Java verifiers in the competition.
+ 
+% ============================================================
+\section{Benchmark Selection}
+\label{sec:benchmark-selection}
+% ============================================================
+ 
+The SV-COMP benchmark repository~\cite{SVBenchmarks} contains a large
+number of tasks across many categories. As described in
+\Cref{sec:svcomp-java}, the \texttt{Java.Overall} category in
+SV-COMP~2026 consists of 1\,731 tasks.
+Evaluating all of these is outside the scope of this project, so I selected
+a subset of them.
+ 
+My primary criterion for inclusion in the subset was \emph{translatability}.
+I included a benchmark only if I could translate it into a Pure
+Scala program that Stainless can process. I excluded several classes of benchmarks
+based on these criteria:
+ 
+\begin{itemize}
+  %rewrite a bit%
+  \item Benchmarks that rely on Java specific features with no direct
+        Scala equivalent.
+  \item Benchmarks that depend on external Java libraries or runtime
+        behaviour that I could not reproduce inside Stainless's supported
+        subset of Scala.
+\end{itemize}
+ 
+Within the remaining translatable benchmarks, I chose a representative subset 
+to cover both property types (\texttt{valid-assert} and
+\texttt{no-runtime-exception}) and a range of program structures,
+including simple programs, programs with loops, and programs
+with recursion. This
+variety allows my evaluation to identify patterns in what Stainless
+handles well and where it encounters difficulties, rather than reporting
+a single success rate over a homogeneous workload.
+ 
+%I gave priority to benchmarks drawn from established Java verification
+%tool suites such as JayHorn~\cite{JayHorn} and JBMC~\cite{JBMC}, as
+%these tend to be well specified and have clear expected verdicts that are
+%independently confirmed.
+ 
+% ============================================================
+\section{Translation from Java to Scala}
+\label{sec:translation}
+% ============================================================
+ 
+Since Stainless operates on a functional subset of Scala, the selected
+Java benchmarks cannot be passed to Stainless directly. I manually translated each benchmark
+from Java to Scala which is supported by Stainless. I performed the translation
+manually rather than through an automated tool, because the structural
+differences between Java and Stainless's supported subset of Scala require
+some judgement. Specifically, I had to decide how to preserve the program's 
+semantics while conforming to Pure Scala's restrictions, 
+without making any changes to
+the original meaning of the program or giving Stainless any unfair 
+advantages or disadvantages.
 
+I followed several general principles during the translation process, 
+which I describe below.
+ 
+\subsection{Data Types}
+\label{sec:translation-types}
+ 
+Java programs primarily use primitive integer types such as \texttt{int}.
+In the translated Scala programs, I systematically replaced Java's \texttt{int}
+with Stainless's \texttt{BigInt} type, which represents unbounded mathematical
+integers and carries no overflow semantics. I made this choice to avoid the
+complication of modelling Java's 32 bit or 64 bit wrap around arithmetic,
+which would require modular arithmetic and would complicate the verification
+process significantly.
+
+\subsection{Control Flow}
+\label{sec:translation-control}
+
+I translated Java's \texttt{for} and \texttt{while} loops into Scala
+\texttt{while} loops. Stainless allows \texttt{while} loops through its imperative
+extension~\cite{StainlessImperative}, and converts them into Pure Scala before
+verifying them. I chose to keep the loop structures exactly as they were in Java
+to stay faithful to the original benchmarks, rather than rewriting them into
+recursive functions (which Stainless usually handles more easily).
+
+ 
+\subsection{Assertions and Properties}
+\label{sec:translation-assertions}
+ 
+Benchmarks in SV-COMP often evaluate both properties simultaneously 
+(\texttt{valid-assert} and \texttt{no-runtime-exception}), 
+and these properties can sometimes have different expected verdicts 
+within the exact same benchmark. 
+
+To verify \texttt{valid-assert} properties, the original Java benchmarks
+use \texttt{assert} statements. When translating these to Scala, 
+I converted them into Stainless's \texttt{assert} expressions or 
+incorporated them directly as function postconditions using 
+Stainless's \texttt{ensuring} keyword. Stainless then verifies 
+these statically as proof obligations.
+
+On the other hand, for the \texttt{no-runtime-exception} property, no explicit 
+annotations or assertions are required. Stainless automatically 
+verifies the absence of runtime errors such as array out of bounds 
+access and division by zero using its built in verification 
+process~\cite{Stainless}.
+ 
+% ============================================================
+\section{Specification and Annotation}
+\label{sec:annotation}
+% ============================================================
+ 
+A key difference between testing and deductive verification is that
+Stainless must be given enough information about a program's intended
+behaviour to be able to construct a proof. 
+While translating properties into \texttt{assert}
+or \texttt{ensuring} expressions is often enough for simple code,
+programs with loops or recursion additionally require the user to supply
+loop invariants or termination measures.
+ 
+\textbf{Loop invariants:}
+A loop invariant is a predicate that must hold at the start of each
+iteration and after the loop terminates. For \texttt{while} loops in
+the translated benchmarks, I provided loop invariants using Stainless's
+\texttt{.invariant()} method attached directly to the loop block. I constructed these 
+invariants by analyzing the logic of the original Java loops. Understanding what 
+the loop was intended to do, as well as knowing whether the benchmark was expected 
+to pass or fail, made it easier to determine what mathematical properties 
+needed to be tracked during verification.
+ 
+\textbf{Termination measures:}
+Stainless requires termination proofs for all recursive functions to
+ensure that a non-terminating function cannot trivially satisfy any
+postcondition~\cite{Stainless}. For recursive translations of Java loops,
+a termination measure is provided using the \texttt{decreases} clause.
+The measure is typically the number of iterations remaining, expressed
+as a function of the loop variable and its bound.
+ 
+\textbf{Preconditions and postconditions:}
+For benchmarks where the expected verdict is \texttt{TRUE}, I added a
+postcondition using the \texttt{.ensuring()} clause to capture the
+property that the program should satisfy. For benchmarks where the
+expected verdict is \texttt{FALSE}, the goal is to confirm that Stainless
+produces a counterexample. In these cases, the assertion remains in the 
+translated program, without strengthening the specification, so that Stainless
+can find the counterexample.
+ 
+The amount of annotation required varies across the benchmarks.
+Simple programs often require no annotation beyond the
+assertion itself, while other benchmarks with loops and complex
+logic may require more significant annotation effort. 
+ 
+% ============================================================
+\section{Experimental Setup}
+\label{sec:experimental-setup}
+% ============================================================
+ 
+I ran all experiments on a single machine with a fixed hardware and
+software configuration to ensure that timing measurements are
+reproducible. The relevant configuration is as follows.
+ 
+\begin{itemize}
+  \item \textbf{Stainless version:} I recorded the version of Stainless used 
+        in the artifact alongside the translated benchmarks.
+  \item \textbf{SMT solver:} I ran Stainless with its default SMT
+        solver configuration, which uses Z3~\cite{Z3} as the primary
+        backend.
+  \item \textbf{Resource limits:} 
+\end{itemize}
+ 
+Unlike the official SV-COMP participants.
+% ============================================================
+\section{Data Collection and Analysis}
+\label{sec:data-collection}
+% ============================================================
+ 
+For each translated benchmark, I recorded the following data:
+ 
+\begin{itemize}
+  \item The Stainless verdict: \texttt{valid}, \texttt{invalid}
+        (with the counterexample if available), \texttt{timeout}, or
+        \texttt{unknown}.
+  \item The time taken for Stainless to produce the verdict.
+  \item The expected SV-COMP verdict (\texttt{TRUE} or \texttt{FALSE}).
+  \item Whether the Stainless verdict agrees with the expected verdict.
+\end{itemize}
+ 
+The primary measure of success is the \emph{correct verdict rate}, which is the
+fraction of benchmarks for which Stainless's verdict matches the expected
+SV-COMP verdict. A Stainless \texttt{valid} result is taken to correspond
+to a SV-COMP \texttt{TRUE} expected verdict, and a Stainless
+\texttt{invalid} result to a \texttt{FALSE} expected verdict.
+ 
+I used the verification results produced by Java verifiers participating in
+SV-COMP~2026 as a reference point throughout the analysis.
 \chapter{Design}
 
 \chapter{Implementation}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.16)  5 MAY 2026 01:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.16)  11 MAY 2026 04:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -644,17 +644,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 222.
 [1
 
-{d:/texlive/2026/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}]
-
-Package natbib Warning: Citation `ModelChecking' on page 2 undefined on input line 263.
-
-
-Package natbib Warning: Citation `StaticAnalysis' on page 2 undefined on input line 266.
-
-
-Package natbib Warning: Citation `DeductiveVerification' on page 2 undefined on input line 273.
-
-[2] [3] [4
+{d:/texlive/2026/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}] [2] [3] [4
 
 ]
 Chapter 2.
@@ -677,39 +667,52 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 6.0pt on input line 393.
 LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 393.
- [5{d:/texlive/2026/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}]
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 403.
- [6]
-Chapter 3.
-[7
+<images/add.png, id=207, 748.7975pt x 120.45pt>
+File: images/add.png Graphic file (type png)
+<use images/add.png>
+Package pdftex.def Info: images/add.png  used on input line 401.
+(pdftex.def)             Requested size: 406.87665pt x 65.45003pt.
 
-] [8
+Overfull \hbox (36.99083pt too wide) in paragraph at lines 401--403
+ [][] 
+ []
+
+[5{d:/texlive/2026/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}]
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 12.0pt on input line 411.
+ [6 <./images/add.png (PNG copy)>] [7] [8]
+Chapter 3.
+[9
+
+]
+Overfull \hbox (8.19742pt too wide) in paragraph at lines 667--671
+\T1/LinuxLibertineT-TLF/m/n/10.95 (-10) Benchmarks in SV-COMP of-ten eval-u-ate both prop-er-ties sim-ul-tan-eously (\T1/zi4/m/n/10.95 valid-assert
+ []
+
+
+Overfull \hbox (3.37038pt too wide) in paragraph at lines 679--684
+\T1/LinuxLibertineT-TLF/m/n/10.95 (-10) tions or as-ser-tions are re-quired. Stain-less auto-mat-ic-ally veri-fies the ab-sence of runtime
+ []
+
+[10] [11] [12
 
 ]
 Chapter 4.
-[9] [10
-
-]
-Chapter 5.
-[11] [12
-
-]
-Chapter 6.
 [13] [14
 
 ]
+Chapter 5.
+[15] [16
+
+]
+Chapter 6.
+[17] [18
+
+]
 Chapter 7.
-(./main.bbl [15] [16
+(./main.bbl [19] [20
 
 ])
-
-Package natbib Warning: There were undefined citations.
-
-
-Package caption Warning: Unused \captionsetup[figure] on input line 52.
-See the caption package documentation for explanation.
-
 
 Package caption Warning: Unused \captionsetup[table] on input line 53.
 See the caption package documentation for explanation.
@@ -718,27 +721,27 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[listing] on input line 59.
 See the caption package documentation for explanation.
 
-[17] (./main.aux)
+[21] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6FC2E9A37552EDE12D7BDAB87EEAF8C5;1401.
+(rerunfilecheck)             Checksum: 1F15EC3370CAAF2E2756FB7F9B16D188;3336.
  ) 
 Here is how much of TeX's memory you used:
- 20944 strings out of 467348
- 361226 string characters out of 5419841
- 938598 words of memory out of 5000000
- 49539 multiletter control sequences out of 15000+600000
- 707934 words of font info for 162 fonts, out of 8000000 for 9000
+ 21058 strings out of 467348
+ 363455 string characters out of 5419841
+ 938637 words of memory out of 5000000
+ 49614 multiletter control sequences out of 15000+600000
+ 709381 words of font info for 172 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,6n,117p,1060b,1421s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/texlive/2026/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb>
-Output written on main.pdf (25 pages, 319938 bytes).
+Output written on main.pdf (29 pages, 354337 bytes).
 PDF statistics:
- 266 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 50793 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 384 PDF objects out of 1000 (max. 8388607)
+ 336 compressed objects within 4 object streams
+ 79 named destinations out of 1000 (max. 500000)
+ 50894 words of extra memory for PDF output out of 51595 (max. 10000000)
 
