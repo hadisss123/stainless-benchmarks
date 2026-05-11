@@ -1,9 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{Stainless}
-{EPFL LARA}. {S}tainless {F}ormal {V}erification for {S}cala; 2025.
-\newblock \url{https://epfl-lara.github.io/stainless/}.
-
 \bibitem{SV-COMP}
 Beyer D. {C}ompetition on {S}oftware {V}erification ({SV-COMP}); 2026.
 \newblock \url{https://sv-comp.sosy-lab.org/}.
@@ -17,11 +13,13 @@ Clarke EM, Grumberg O, Peled DA.
 Nielson F, Nielson HR, Hankin C.
 \newblock Principles of Program Analysis.
 \newblock Springer; 1999.
+\newblock \url{https://doi.org/10.1007/978-3-662-03811-6}.
 
 \bibitem{DeductiveVerification}
 Filli{\^{a}}tre J, Paskevich A.
 \newblock Why3: {W}here Programs Meet Provers.
 \newblock In: Programming Languages and Systems ({ESOP}). vol. 7792 of Lecture Notes in Computer Science; 2013. p. 125-8.
+\newblock \url{https://doi.org/10.1007/978-3-642-37036-6_8}.
 
 \bibitem{SMTSolvers}
 Barrett C, Fontaine P, Tinelli C. {T}he {S}atisfiability {M}odulo {T}heories {L}ibrary ({SMT-LIB}); 2016.
@@ -36,7 +34,7 @@ Barrett C, Fontaine P, Tinelli C. {T}he {S}atisfiability {M}odulo {T}heories {L}
 Kuncak V, Hamza J.
 \newblock Stainless Verification System Tutorial.
 \newblock In: Formal Methods in Computer Aided Design, {FMCAD} 2021, New Haven, CT, USA, October 19-22, 2021. {IEEE}; 2021. p. 2-7.
-\newblock Available from: \url{https://doi.org/10.34727/2021/isbn.978-3-85448-046-4\_2}.
+\newblock Available from: \url{https://doi.org/10.34727/2021/isbn.978-3-85448-046-4_2}.
 
 \bibitem{StainlessImperative}
 {EPFL LARA}. Imperative and Other Effects --- {Stainless} Documentation; 2024.
@@ -45,13 +43,14 @@ Kuncak V, Hamza J.
 
 \bibitem{SV-COMP2026}
 Beyer D, Strej\v{c}ek J.
-\newblock Evaluating Software Verifiers for {C}, {Java}, and {SV-LIB} (Report on {SV-COMP} 2026).
-\newblock In: Tools and Algorithms for the Construction and Analysis of Systems -- 32nd International Conference, {TACAS} 2026, Held as Part of {ETAPS} 2026, Turin, Italy, April 11--16, 2026, Proceedings, Part~{II}. vol. 16506 of Lecture Notes in Computer Science. Springer; 2026. .
+\newblock Evaluating Software Verifiers for {C}, {Java}, and {SV-LIB}.
+\newblock In: Tools and Algorithms for the Construction and Analysis of Systems. vol. 16506 of Lecture Notes in Computer Science. Springer; 2026. \url{https://doi.org/10.1007/978-3-032-22749-2_23}.
 
 \bibitem{BenchExec}
 Beyer D, L{\"{o}}we S, Wendler P.
 \newblock Reliable Benchmarking: Requirements and Solutions.
 \newblock International Journal on Software Tools for Technology Transfer. 2019;21(1):1-29.
+\newblock \url{https://doi.org/10.1007/s10009-017-0469-y}.
 
 \bibitem{SVBenchmarks}
 {SoSy-Lab}. {SV-Benchmarks}: {S}oftware {V}erification {B}enchmarks; 2026.
@@ -61,5 +60,6 @@ Beyer D, L{\"{o}}we S, Wendler P.
 de~Moura L, Bj{\o}rner N.
 \newblock {Z3}: An Efficient {SMT} Solver.
 \newblock In: Tools and Algorithms for the Construction and Analysis of Systems ({TACAS}). vol. 4963 of Lecture Notes in Computer Science; 2008. p. 337-40.
+\newblock \url{https://doi.org/10.1007/978-3-540-78800-3_24}.
 
 \end{thebibliography}

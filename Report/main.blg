@@ -7,8 +7,7 @@ Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: main.bib
-Warning--empty author and editor in Stainless
-Warning--missing publisher in Stainless
+Warning--I didn't find a database entry for "Stainless"
 Warning--empty author and editor in SV-COMP
 Warning--missing publisher in SV-COMP
 Warning--empty author and editor in SMTSolvers
@@ -20,45 +19,45 @@ Warning--missing publisher in StainlessImperative
 Warning--empty pages in SV-COMP2026
 Warning--empty author and editor in SVBenchmarks
 Warning--missing publisher in SVBenchmarks
-You've used 13 entries,
+You've used 12 entries,
             3507 wiz_defined-function locations,
-            776 strings with 7198 characters,
-and the built_in function-call counts, 13752 in all, are:
-= -- 1519
-> -- 123
+            778 strings with 7181 characters,
+and the built_in function-call counts, 13390 in all, are:
+= -- 1493
+> -- 119
 < -- 64
-+ -- 58
-- -- 28
-* -- 977
-:= -- 1545
-add.period$ -- 39
-call.type$ -- 13
-change.case$ -- 14
++ -- 56
+- -- 27
+* -- 949
+:= -- 1499
+add.period$ -- 41
+call.type$ -- 12
+change.case$ -- 18
 chr.to.int$ -- 125
-cite$ -- 26
-duplicate$ -- 1188
-empty$ -- 1338
-format.name$ -- 33
-if$ -- 3237
+cite$ -- 23
+duplicate$ -- 1156
+empty$ -- 1290
+format.name$ -- 32
+if$ -- 3155
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 106
+int.to.str$ -- 12
+missing$ -- 104
 newline$ -- 65
-num.names$ -- 13
-pop$ -- 311
+num.names$ -- 12
+pop$ -- 293
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 263
+skip$ -- 251
 stack$ -- 0
-substring$ -- 2071
-swap$ -- 298
+substring$ -- 2023
+swap$ -- 293
 text.length$ -- 31
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 13
-while$ -- 84
-width$ -- 15
+warning$ -- 11
+while$ -- 80
+width$ -- 14
 write$ -- 141
-(There were 13 warnings)
+(There were 12 warnings)

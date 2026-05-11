@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.16)  11 MAY 2026 04:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.16)  11 MAY 2026 04:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -642,12 +642,18 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 222.
+
+Package natbib Warning: Citation `Stainless' on page 1 undefined on input line 223.
+
 [1
 
 {d:/texlive/2026/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}] [2] [3] [4
 
 ]
 Chapter 2.
+
+Package natbib Warning: Citation `Stainless' on page 5 undefined on input line 363.
+
 LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 371.
 (d:/texlive/2026/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
@@ -667,7 +673,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 6.0pt on input line 393.
 LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 393.
-<images/add.png, id=207, 748.7975pt x 120.45pt>
+<images/add.png, id=204, 748.7975pt x 120.45pt>
 File: images/add.png Graphic file (type png)
 <use images/add.png>
 Package pdftex.def Info: images/add.png  used on input line 401.
@@ -690,11 +696,18 @@ Overfull \hbox (8.19742pt too wide) in paragraph at lines 667--671
  []
 
 
+Package natbib Warning: Citation `Stainless' on page 10 undefined on input line 683.
+
+
 Overfull \hbox (3.37038pt too wide) in paragraph at lines 679--684
 \T1/LinuxLibertineT-TLF/m/n/10.95 (-10) tions or as-ser-tions are re-quired. Stain-less auto-mat-ic-ally veri-fies the ab-sence of runtime
  []
 
-[10] [11] [12
+[10]
+
+Package natbib Warning: Citation `Stainless' on page 11 undefined on input line 711.
+
+[11] [12
 
 ]
 Chapter 4.
@@ -714,6 +727,9 @@ Chapter 7.
 
 ])
 
+Package natbib Warning: There were undefined citations.
+
+
 Package caption Warning: Unused \captionsetup[table] on input line 53.
 See the caption package documentation for explanation.
 
@@ -730,18 +746,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1F15EC3370CAAF2E2756FB7F9B16D188;3336.
  ) 
 Here is how much of TeX's memory you used:
- 21058 strings out of 467348
- 363455 string characters out of 5419841
- 938637 words of memory out of 5000000
- 49614 multiletter control sequences out of 15000+600000
- 709381 words of font info for 172 fonts, out of 8000000 for 9000
+ 21057 strings out of 467348
+ 363465 string characters out of 5419841
+ 938621 words of memory out of 5000000
+ 49611 multiletter control sequences out of 15000+600000
+ 709646 words of font info for 174 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,6n,117p,1060b,1421s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/texlive/2026/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb>
-Output written on main.pdf (29 pages, 354337 bytes).
+Output written on main.pdf (29 pages, 354543 bytes).
 PDF statistics:
- 384 PDF objects out of 1000 (max. 8388607)
- 336 compressed objects within 4 object streams
- 79 named destinations out of 1000 (max. 500000)
+ 383 PDF objects out of 1000 (max. 8388607)
+ 335 compressed objects within 4 object streams
+ 78 named destinations out of 1000 (max. 500000)
  50894 words of extra memory for PDF output out of 51595 (max. 10000000)
 
