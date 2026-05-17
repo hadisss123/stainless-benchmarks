@@ -360,7 +360,7 @@ verification framework used in this project. I will describe
 how it works, its verification process and the subset of Scala
 it supports, known as Pure Scala.
 
-Stainless~\cite{Stainless} is a deductive verifier used to prove correctness 
+Stainless~\cite{StainlessOriginal} is a deductive verifier used to prove correctness 
 properties on Scala programs. Stainless takes Scala programs
 annotated with specifications such as pre- and postconditions
 and attempts to prove their correctness using SMT solvers.
@@ -451,12 +451,6 @@ on termination of the loop.
 
 \section{SV-COMP}
 \label{sec:svcomp}
- 
-In this section, I give an overview of SV-COMP, the benchmark competition
-whose tasks form the basis of this project.
-I will describe how the competition is organised, how its benchmarks are
-structured, and focus more on explaining the Java category that is directly
-relevant to the translation and evaluation work done in this project.
 
 SV-COMP~\cite{SV-COMP} (Competition on Software Verification) is an annual
 international competition that compares software verification tools on a
@@ -465,7 +459,7 @@ The most recent edition, SV-COMP 2026, evaluated 61 verifiers and
 16 validators for C programs and 11 verifiers and 3 validators for Java
 programs~\cite{SV-COMP2026}.
 All benchmark programs and their specifications are publicly
-available in the \texttt{sv-benchmarks} repository, and any researcher may
+available in the \texttt{sv-benchmarks} repository~\cite{SVBenchmarks}, and any researcher may
 contribute new tasks which fit the competition's quality
 criteria~\cite{SV-COMP}.
  
@@ -564,21 +558,22 @@ results reported by Java verifiers in the competition.
 
 \chapter{Methodology}
 \label{cha:methodology}
- 
-This chapter describes the methodology I used to evaluate Stainless on
-SV-COMP benchmarks. I followed an empirical methodology in
+
+I followed an empirical methodology in
 which I treated Stainless as the system under study and its verification
-outcomes on adapted SV-COMP benchmarks served as the data. The
-chapter is organised as follows. \Cref{sec:benchmark-selection} describes
-how I chose the subset of benchmarks to evaluate.
-\Cref{sec:translation} describes the process of translating the selected
-Java benchmarks to Scala programs suitable for Stainless.
-\Cref{sec:annotation} describes how I added formal specifications to
-the translated programs. \Cref{sec:experimental-setup} describes the
-experimental setup I used to run Stainless on the translated benchmarks.
-Finally, \Cref{sec:data-collection} describes how I collected the results and 
-how I analysed and compared them against the expected
-SV-COMP verdicts and the results reported by Java verifiers in the competition.
+outcomes on adapted SV-COMP benchmarks served as the data. I first
+had to choose a subset of the Java benchmarks I was going to evaluate 
+following some parameters (see \Cref{sec:benchmark-selection}).
+Then, I translated the selected benchmarks to equivalent Scala programs 
+suitable for Stainless (see \Cref{sec:benchmark-selection}).
+While translating the programs I had to add additional annotations and 
+formal specifications to the translated code to make them 
+suitable for Stainless (see \Cref{sec:annotation}).
+I then ran Stainless on the translated benchmarks under the same 
+resource limits as SV-COMP (see \Cref{sec:experimental-setup}) and collected the 
+results to then analyze and compare them against the expected
+SV-COMP verdicts and the results reported by Java verifiers 
+in the competition (see \Cref{sec:data-collection}). 
  
 % ============================================================
 \section{Benchmark Selection}
@@ -605,7 +600,46 @@ based on these criteria:
         behaviour that I could not reproduce inside Stainless's supported
         subset of Scala.
 \end{itemize}
- 
+
+\begin{figure}[t]
+\begin{lstlisting}[language=Java, basicstyle=\ttfamily\scriptsize]
+import org.sosy_lab.sv_benchmarks.Verifier;
+import rbtree.RedBlackTree;
+import rbtree.RedBlackTreeNode;
+
+public class Main {
+  public static void main(String[] args) {
+    int N = Verifier.nondetInt();
+    Verifier.assume(N > 0);
+
+    try {
+      RedBlackTree tree = new RedBlackTree();
+
+      for (int i = 0; i < N; i++) {
+        int data = Verifier.nondetInt();
+        tree.treeInsert(new RedBlackTreeNode(data));
+      }
+
+      int data = Verifier.nondetInt();
+      RedBlackTreeNode node = tree.treeSearch(tree.root(), data);
+    } catch (Exception e) {
+      assert false;
+    }
+  }
+}
+\end{lstlisting}
+\caption{An excluded benchmark utilizing external packages 
+and exception handling.}
+\label{fig:excluded-benchmark}
+\end{figure}
+
+For example, the \texttt{RedBlackTree} benchmarks from the 
+\texttt{algorithms} category were excluded because they rely 
+heavily on external package imports
+and exception handling, which aren't directly translatable to Stainless's 
+Pure Scala subset. \Cref{fig:excluded-benchmark} illustrates this 
+untranslatable structure.
+
 Within the remaining translatable benchmarks, I chose a representative subset 
 to cover both property types (\texttt{valid-assert} and
 \texttt{no-runtime-exception}) and a range of program structures,
@@ -649,6 +683,43 @@ integers and carries no overflow semantics. I made this choice to avoid the
 complication of modelling Java's 32 bit or 64 bit wrap around arithmetic,
 which would require modular arithmetic and would complicate the verification
 process significantly.
+
+An example of this can be seen in the translation of the \texttt{Ackermann}
+benchmark, which is shown in \cref{fig:datatype-translation}.
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Original Java (32 bit int):}
+\begin{lstlisting}[language=Java, basicstyle=\ttfamily\scriptsize]
+public static int ack(int m, int n) {
+    if (m == 0) {
+      return n + 1;
+    }
+    if (n == 0) {
+      return ack(m - 1, 1);
+    }
+    return ack(m - 1, ack(m, n - 1));
+  }
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Translated Scala (Unbounded BigInt):}
+\begin{lstlisting}[language=Scala, basicstyle=\ttfamily\scriptsize]
+def ack(m: BigInt, n: BigInt): BigInt = {
+    if (m == 0)
+      n + 1
+    else if (n == 0)
+      ack(m - 1, 1)
+    else
+      ack(m - 1, ack(m, n - 1))
+  }
+\end{lstlisting}
+\end{minipage}
+\caption{Translation of the \texttt{Ackermann} benchmark, demonstrating the conversion from bounded 32-bit integers to unbounded \texttt{BigInt} to avoid overflow semantics.}
+\label{fig:datatype-translation}
+\end{figure}
+
 
 \subsection{Control Flow}
 \label{sec:translation-control}
@@ -704,14 +775,84 @@ invariants by analyzing the logic of the original Java loops. Understanding what
 the loop was intended to do, as well as knowing whether the benchmark was expected 
 to pass or fail, made it easier to determine what mathematical properties 
 needed to be tracked during verification.
+
+\Cref{fig:insertion-sort} shows an example of a translated benchmark with loop invariants.
+The original benchmark is \texttt{InsertionSort-FunSat01}.
+
+\begin{figure}[t]
+\begin{lstlisting}[language=Scala, basicstyle=\ttfamily\scriptsize]
+def sort(a: Array[Int]): Unit = {
+  require(a.length >= 0)
+  val N = a.length
+  var i = 1
+  (while (i < N) {
+    decreases(N - i)
+    var j = i - 1
+    var x = a(i)
+    (while ((j >= 0) && (a(j) > x)) {
+      decreases(j + 1)
+      a(j + 1) = a(j)
+      j = j - 1
+    }).invariant(j >= -1 && j < i && i < N && a.length == N)
+    a(j + 1) = x
+    i = i + 1
+  }).invariant(i >= 1 && i <= N && a.length == N)
+}
+\end{lstlisting}
+\caption{The translated Scala \texttt{sort} method from \texttt{InsertionSort-FunSat01}, showing loop invariants and termination measures attached to nested loops.}
+\label{fig:insertion-sort}
+\end{figure}
+
  
 \textbf{Termination measures:}
 Stainless requires termination proofs for all recursive functions to
 ensure that a non-terminating function cannot trivially satisfy any
-postcondition~\cite{Stainless}. For recursive translations of Java loops,
+postcondition~\cite{StainlessOriginal}. For recursive benchmarks,
 a termination measure is provided using the \texttt{decreases} clause.
-The measure is typically the number of iterations remaining, expressed
-as a function of the loop variable and its bound.
+The measure must be an expression that strictly decreases on every
+recursive call and is bounded below. \Cref{fig:termination-gcd} shows
+an example from the \texttt{SatGcd} benchmark, where the sum \texttt{y1 + y2}
+serves as the measure: each recursive call either reduces \texttt{y1} or
+\texttt{y2} by the other, so the sum strictly decreases.
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Original Java:}
+\begin{lstlisting}[language=Java, basicstyle=\ttfamily\scriptsize]
+static int gcd(int y1, int y2) {
+  if (y1 <= 0 || y2 <= 0)
+    return 0;
+  if (y1 == y2)
+    return y1;
+  if (y1 > y2)
+    return gcd(y1 - y2, y2);
+  return gcd(y1, y2 - y1);
+}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Translated Scala:}
+\begin{lstlisting}[language=Scala, basicstyle=\ttfamily\scriptsize]
+def gcd(y1: BigInt, y2: BigInt): BigInt = {
+  decreases(y1 + y2)
+  require(y1 > 0 && y2 > 0)
+  if (y1 <= 0 || y2 <= 0)
+    BigInt(0)
+  else if (y1 == y2)
+    y1
+  else if (y1 > y2)
+    gcd(y1 - y2, y2)
+  else
+    gcd(y1, y2 - y1)
+}.ensuring(res => res >= 1)
+\end{lstlisting}
+\end{minipage}
+\caption{Translation of the \texttt{SatGcd} benchmark demonstrating a
+non-trivial termination measure: \texttt{decreases(y1 + y2)} decreases
+on every recursive call since each call reduces one argument by the other.}
+\label{fig:termination-gcd}
+\end{figure}
  
 \textbf{Preconditions and postconditions:}
 For benchmarks where the expected verdict is \texttt{TRUE}, I added a
@@ -725,7 +866,48 @@ can find the counterexample.
 The amount of annotation required varies across the benchmarks.
 Simple programs often require no annotation beyond the
 assertion itself, while other benchmarks with loops and complex
-logic may require more significant annotation effort. 
+logic may require more significant annotation effort.
+\Cref{fig:addition-translation} illustrates a fully annotated recursive
+benchmark, showing the combination of \texttt{BigInt} types, a
+\texttt{decreases} termination measure, and an \texttt{.ensuring}
+postcondition in the \texttt{Addition} benchmark.
+
+\begin{figure}[t]
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Original Java:}
+\begin{lstlisting}[language=Java, basicstyle=\ttfamily\scriptsize]
+static int addition(int m, int n) { 
+  if (n == 0) {
+    return m;
+  }
+  if (n > 0) {
+    return addition(m + 1, n - 1);
+  }
+  return addition(m - 1, n + 1);
+}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Translated Scala (with annotations):}
+\begin{lstlisting}[language=Scala, basicstyle=\ttfamily\scriptsize]
+def addition(m: BigInt, n: BigInt): BigInt = {
+  decreases(if (n >= 0) n else -n)
+  if(n == 0){
+    m
+  } else if(n > 0){
+    addition(m + 1, n - 1)
+  } else {
+    addition(m - 1, n + 1)
+  }
+}.ensuring(res => res == m + n)
+\end{lstlisting}
+\end{minipage}
+\caption{Translation of the \texttt{Addition} benchmark demonstrating \texttt{BigInt} usage, termination measures, and postconditions.}
+\label{fig:addition-translation}
+\end{figure}
+
+
  
 % ============================================================
 \section{Experimental Setup}
@@ -778,7 +960,7 @@ SV-COMP~2026 as a reference point throughout the analysis.
 
 \chapter{Conclusions}
 
-\bibliographystyle{vancouver}
+\bibliographystyle{plainurl}
 \bibliography{main}
 
 \end{document}

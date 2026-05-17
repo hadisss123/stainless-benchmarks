@@ -272,7 +272,12 @@ INPUT d:/texlive/2026/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc
 INPUT ./main.lof
 INPUT ./main.lof
 INPUT main.lof
+INPUT d:/texlive/2026/texmf-dist/tex/latex/inconsolata/t1zi4.fd
+INPUT d:/texlive/2026/texmf-dist/tex/latex/inconsolata/t1zi4.fd
+INPUT d:/texlive/2026/texmf-dist/tex/latex/inconsolata/t1zi4.fd
+INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4r-0.tfm
 OUTPUT main.lof
+INPUT d:/texlive/2026/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc
 INPUT ./main.lot
 INPUT ./main.lot
 INPUT main.lot
@@ -283,10 +288,6 @@ INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/libertine/LinBiolinumT-tlf-t1-
 INPUT d:/texlive/2026/texmf-dist/fonts/vf/public/libertine/LinLibertineTI-tlf-t1.vf
 INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/libertine/LinLibertineTI-tlf-t1--base.tfm
 INPUT d:/texlive/2026/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
-INPUT d:/texlive/2026/texmf-dist/tex/latex/inconsolata/t1zi4.fd
-INPUT d:/texlive/2026/texmf-dist/tex/latex/inconsolata/t1zi4.fd
-INPUT d:/texlive/2026/texmf-dist/tex/latex/inconsolata/t1zi4.fd
-INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4r-0.tfm
 INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4r-0.tfm
 INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1.tfm
 INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1.tfm
@@ -296,7 +297,6 @@ INPUT ./images/add.png
 INPUT ./images/add.png
 INPUT ./images/add.png
 INPUT ./images/add.png
-INPUT d:/texlive/2026/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc
 INPUT d:/texlive/2026/texmf-dist/fonts/vf/public/libertine/LinLibertineT-tlf-t1.vf
 INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1--base.tfm
 INPUT d:/texlive/2026/texmf-dist/fonts/vf/public/libertine/LinBiolinumT-tlf-t1.vf
@@ -304,6 +304,12 @@ INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/libertine/LinBiolinumT-tlf-t1-
 INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/libertine/LinBiolinumT-tlf-t1.tfm
 INPUT d:/texlive/2026/texmf-dist/fonts/vf/public/libertine/LinBiolinumT-tlf-t1.vf
 INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/libertine/LinBiolinumT-tlf-t1--base.tfm
+INPUT d:/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT d:/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT d:/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4r-0.tfm
+INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1.tfm
+INPUT d:/texlive/2026/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4b-0.tfm
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl

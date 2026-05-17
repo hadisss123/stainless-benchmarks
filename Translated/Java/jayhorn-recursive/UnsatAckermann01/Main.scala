@@ -1,7 +1,10 @@
 import stainless.lang.* 
 
+//Fails like the expected verdict
+
 object UnsatAckermann01 {
     def ackermann(m: BigInt, n: BigInt): BigInt = {
+      decreases(m, n)
       if(m == 0) {
         n + 1
       }
@@ -15,6 +18,10 @@ object UnsatAckermann01 {
     
     def testUnsatAckermann01(m: BigInt, n: BigInt): Unit = {
         val result = ackermann(m, n)
-        assert(m < 2 || result >= 4)
+        if (m < 2 || result >= 4) {
+            ()
+        } else {
+            assert(false)
+        }
     }
 }

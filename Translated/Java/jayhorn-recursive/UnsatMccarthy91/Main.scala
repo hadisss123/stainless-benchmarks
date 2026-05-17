@@ -1,12 +1,15 @@
 import stainless.lang.* 
 
+//Fails like the expected verdict
+
 object UnsatMccarthy91 {
   def f(n: BigInt): BigInt = {
+    decreases(if (n > 100) BigInt(0) else 101 - n)
     if (n > 100)
       n - 10
     else
       f(f(n + 11))
-  }
+  }.ensuring(res => res == (if (n > 100) n - 10 else BigInt(91)))
 
   def testUnsatMccarthy91(x: BigInt): Unit = {
     val y = f(x)

@@ -1,65 +1,77 @@
 \begin{thebibliography}{10}
 
-\bibitem{SV-COMP}
-Beyer D. {C}ompetition on {S}oftware {V}erification ({SV-COMP}); 2026.
-\newblock \url{https://sv-comp.sosy-lab.org/}.
-
-\bibitem{ModelChecking}
-Clarke EM, Grumberg O, Peled DA.
-\newblock Model Checking.
-\newblock MIT Press; 1999.
-
-\bibitem{StaticAnalysis}
-Nielson F, Nielson HR, Hankin C.
-\newblock Principles of Program Analysis.
-\newblock Springer; 1999.
-\newblock \url{https://doi.org/10.1007/978-3-662-03811-6}.
-
-\bibitem{DeductiveVerification}
-Filli{\^{a}}tre J, Paskevich A.
-\newblock Why3: {W}here Programs Meet Provers.
-\newblock In: Programming Languages and Systems ({ESOP}). vol. 7792 of Lecture Notes in Computer Science; 2013. p. 125-8.
-\newblock \url{https://doi.org/10.1007/978-3-642-37036-6_8}.
-
 \bibitem{SMTSolvers}
-Barrett C, Fontaine P, Tinelli C. {T}he {S}atisfiability {M}odulo {T}heories {L}ibrary ({SMT-LIB}); 2016.
+Clark Barrett, Pascal Fontaine, and Cesare Tinelli.
+\newblock {T}he {S}atisfiability {M}odulo {T}heories {L}ibrary ({SMT-LIB}), 2016.
 \newblock \url{https://smt-lib.org/}.
 
-\bibitem{StainlessPureScala}
-{EPFL LARA}. {P}ure {S}cala {S}tainless {D}ocumentation; 2024.
-\newblock Accessed: 2025.
-\newblock \url{https://epfl-lara.github.io/stainless/purescala.html}.
-
-\bibitem{KuncakStainlessTutorial}
-Kuncak V, Hamza J.
-\newblock Stainless Verification System Tutorial.
-\newblock In: Formal Methods in Computer Aided Design, {FMCAD} 2021, New Haven, CT, USA, October 19-22, 2021. {IEEE}; 2021. p. 2-7.
-\newblock Available from: \url{https://doi.org/10.34727/2021/isbn.978-3-85448-046-4_2}.
-
-\bibitem{StainlessImperative}
-{EPFL LARA}. Imperative and Other Effects --- {Stainless} Documentation; 2024.
-\newblock Accessed: 2025.
-\newblock \url{https://epfl-lara.github.io/stainless/imperative.html}.
-
-\bibitem{SV-COMP2026}
-Beyer D, Strej\v{c}ek J.
-\newblock Evaluating Software Verifiers for {C}, {Java}, and {SV-LIB}.
-\newblock In: Tools and Algorithms for the Construction and Analysis of Systems. vol. 16506 of Lecture Notes in Computer Science. Springer; 2026. \url{https://doi.org/10.1007/978-3-032-22749-2_23}.
+\bibitem{SV-COMP}
+Dirk Beyer.
+\newblock {C}ompetition on {S}oftware {V}erification ({SV-COMP}), 2026.
+\newblock \url{https://sv-comp.sosy-lab.org/}.
 
 \bibitem{BenchExec}
-Beyer D, L{\"{o}}we S, Wendler P.
-\newblock Reliable Benchmarking: Requirements and Solutions.
-\newblock International Journal on Software Tools for Technology Transfer. 2019;21(1):1-29.
-\newblock \url{https://doi.org/10.1007/s10009-017-0469-y}.
+Dirk Beyer, Stefan L{\"{o}}we, and Philipp Wendler.
+\newblock Reliable benchmarking: Requirements and solutions.
+\newblock {\em International Journal on Software Tools for Technology Transfer}, 21(1):1--29, 2019.
+\newblock \href {https://doi.org/10.1007/s10009-017-0469-y} {\path{doi:10.1007/s10009-017-0469-y}}.
 
-\bibitem{SVBenchmarks}
-{SoSy-Lab}. {SV-Benchmarks}: {S}oftware {V}erification {B}enchmarks; 2026.
-\newblock \url{https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks}.
+\bibitem{SV-COMP2026}
+Dirk Beyer and Jan Strej\v{c}ek.
+\newblock Evaluating software verifiers for {C}, {Java}, and {SV-LIB}.
+\newblock In {\em Tools and Algorithms for the Construction and Analysis of Systems}, volume 16506 of {\em Lecture Notes in Computer Science}. Springer, 2026.
+\newblock \href {https://doi.org/10.1007/978-3-032-22749-2_23} {\path{doi:10.1007/978-3-032-22749-2_23}}.
+
+\bibitem{StainlessOriginal}
+Régis Blanc, Viktor Kuncak, Etienne Kneuss, and Philippe Suter.
+\newblock {A}n {O}verview of the {L}eon {V}erification {S}ystem.
+\newblock In {\em Proceedings of the 3rd Workshop on Scala (SCALA)}. ACM, 2013.
+\newblock \href {https://doi.org/10.1145/2489837.2489840} {\path{doi:10.1145/2489837.2489840}}.
+
+\bibitem{ModelChecking}
+Edmund~M. Clarke, Orna Grumberg, and Doron~A. Peled.
+\newblock {\em Model Checking}.
+\newblock MIT Press, 1999.
 
 \bibitem{Z3}
-de~Moura L, Bj{\o}rner N.
-\newblock {Z3}: An Efficient {SMT} Solver.
-\newblock In: Tools and Algorithms for the Construction and Analysis of Systems ({TACAS}). vol. 4963 of Lecture Notes in Computer Science; 2008. p. 337-40.
-\newblock \url{https://doi.org/10.1007/978-3-540-78800-3_24}.
+Leonardo de~Moura and Nikolaj Bj{\o}rner.
+\newblock {Z3}: An efficient {SMT} solver.
+\newblock In {\em Tools and Algorithms for the Construction and Analysis of Systems ({TACAS})}, volume 4963 of {\em Lecture Notes in Computer Science}, pages 337--340, 2008.
+\newblock \href {https://doi.org/10.1007/978-3-540-78800-3_24} {\path{doi:10.1007/978-3-540-78800-3_24}}.
+
+\bibitem{StainlessImperative}
+{EPFL LARA}.
+\newblock Imperative and other effects --- {Stainless} documentation.
+\newblock \url{https://epfl-lara.github.io/stainless/imperative.html}, 2024.
+\newblock Accessed: 2025.
+
+\bibitem{StainlessPureScala}
+{EPFL LARA}.
+\newblock {P}ure {S}cala {S}tainless {D}ocumentation.
+\newblock \url{https://epfl-lara.github.io/stainless/purescala.html}, 2024.
+\newblock Accessed: 2025.
+
+\bibitem{DeductiveVerification}
+Jean{-}Christophe Filli{\^{a}}tre and Andrei Paskevich.
+\newblock Why3: {W}here programs meet provers.
+\newblock In {\em Programming Languages and Systems ({ESOP})}, volume 7792 of {\em Lecture Notes in Computer Science}, pages 125--128, 2013.
+\newblock \href {https://doi.org/10.1007/978-3-642-37036-6_8} {\path{doi:10.1007/978-3-642-37036-6_8}}.
+
+\bibitem{KuncakStainlessTutorial}
+Viktor Kuncak and Jad Hamza.
+\newblock Stainless verification system tutorial.
+\newblock In {\em Formal Methods in Computer Aided Design, {FMCAD} 2021, New Haven, CT, USA, October 19-22, 2021}, pages 2--7. {IEEE}, 2021.
+\newblock \href {https://doi.org/10.34727/2021/ISBN.978-3-85448-046-4_2} {\path{doi:10.34727/2021/ISBN.978-3-85448-046-4_2}}.
+
+\bibitem{StaticAnalysis}
+Flemming Nielson, Hanne~Riis Nielson, and Chris Hankin.
+\newblock {\em Principles of Program Analysis}.
+\newblock Springer, 1999.
+\newblock \href {https://doi.org/10.1007/978-3-662-03811-6} {\path{doi:10.1007/978-3-662-03811-6}}.
+
+\bibitem{SVBenchmarks}
+{SoSy-Lab}.
+\newblock {SV-Benchmarks}: {S}oftware {V}erification {B}enchmarks, 2026.
+\newblock \url{https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks}.
 
 \end{thebibliography}

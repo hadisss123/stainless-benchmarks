@@ -13,14 +13,14 @@
 \contentsline {subsection}{\numberline {2.2.4}Benchmark Infrastructure}{8}{subsection.2.2.4}%
 \contentsline {chapter}{\numberline {3}Methodology}{9}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Benchmark Selection}{9}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Translation from Java to Scala}{9}{section.3.2}%
+\contentsline {section}{\numberline {3.2}Translation from Java to Scala}{10}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Data Types}{10}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Control Flow}{10}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Assertions and Properties}{10}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Specification and Annotation}{10}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Experimental Setup}{11}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Data Collection and Analysis}{11}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Design}{13}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Implementation}{15}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Evaluation}{17}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusions}{19}{chapter.7}%
+\contentsline {subsection}{\numberline {3.2.3}Assertions and Properties}{11}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Specification and Annotation}{11}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Experimental Setup}{13}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Data Collection and Analysis}{13}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Design}{15}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Implementation}{17}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Evaluation}{19}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusions}{21}{chapter.7}%

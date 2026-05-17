@@ -2,6 +2,9 @@ import stainless.lang.*
 
 object Ackermann01 {
   def ack(m: BigInt, n: BigInt): BigInt = {
+    require(m >= 0 && m <= 3 &&
+            n >= 0 && n <= 23)
+    decreases(m, n)
     if (m == 0)
       n + 1
     else if (n == 0)
@@ -14,6 +17,10 @@ object Ackermann01 {
     require(m >= 0 && m <= 3 &&
             n >= 0 && n <= 23)
     val result = ack(m, n)
-    assert(m >= 0 && n >=0 && result < 0)
+    if (m < 0 || n < 0 || result >= 0) {
+      assert(false)
+    } else {
+      assert(true)
+    }
   }
 }

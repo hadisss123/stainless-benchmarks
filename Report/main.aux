@@ -21,7 +21,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1.3}Thesis Outline}{3}{section.1.3}\protected@file@percent }
 \newlabel{sec:thesis-outline}{{1.3}{3}{Thesis Outline}{section.1.3}{}}
 \newlabel{sec:thesis-outline@cref}{{[section][3][1]1.3}{[1][2][]3}{}{}{}}
-\citation{Stainless}
+\citation{StainlessOriginal}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Background}{5}{chapter.2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -41,6 +41,7 @@
 \citation{StainlessImperative}
 \citation{SV-COMP}
 \citation{SV-COMP2026}
+\citation{SVBenchmarks}
 \citation{SV-COMP}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces The summary Stainless provides after verifying the add function in Listing~\ref {lst:add}.}}{6}{figure.caption.5}\protected@file@percent }
 \newlabel{fig:add}{{2.1}{6}{The summary Stainless provides after verifying the add function in Listing~\ref {lst:add}}{figure.caption.5}{}}
@@ -56,7 +57,7 @@
 \citation{SV-COMP2026}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Benchmark Structure}{7}{subsection.2.2.1}\protected@file@percent }
 \newlabel{sec:svcomp-structure}{{2.2.1}{7}{Benchmark Structure}{subsection.2.2.1}{}}
-\newlabel{sec:svcomp-structure@cref}{{[subsection][1][2,2]2.2.1}{[1][7][]7}{}{}{}}
+\newlabel{sec:svcomp-structure@cref}{{[subsection][1][2,2]2.2.1}{[1][6][]7}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Categories}{7}{subsection.2.2.2}\protected@file@percent }
 \newlabel{sec:svcomp-categories}{{2.2.2}{7}{Categories}{subsection.2.2.2}{}}
 \newlabel{sec:svcomp-categories@cref}{{[subsection][2][2,2]2.2.2}{[1][7][]7}{}{}{}}
@@ -76,56 +77,72 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Benchmark Selection}{9}{section.3.1}\protected@file@percent }
 \newlabel{sec:benchmark-selection}{{3.1}{9}{Benchmark Selection}{section.3.1}{}}
 \newlabel{sec:benchmark-selection@cref}{{[section][1][3]3.1}{[1][9][]9}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Translation from Java to Scala}{9}{section.3.2}\protected@file@percent }
-\newlabel{sec:translation}{{3.2}{9}{Translation from Java to Scala}{section.3.2}{}}
-\newlabel{sec:translation@cref}{{[section][2][3]3.2}{[1][9][]9}{}{}{}}
 \citation{StainlessImperative}
-\citation{Stainless}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces An excluded benchmark utilizing external packages and exception handling.}}{10}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:excluded-benchmark}{{3.1}{10}{An excluded benchmark utilizing external packages and exception handling}{figure.caption.6}{}}
+\newlabel{fig:excluded-benchmark@cref}{{[figure][1][3]3.1}{[1][9][]10}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Translation from Java to Scala}{10}{section.3.2}\protected@file@percent }
+\newlabel{sec:translation}{{3.2}{10}{Translation from Java to Scala}{section.3.2}{}}
+\newlabel{sec:translation@cref}{{[section][2][3]3.2}{[1][9][]10}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Data Types}{10}{subsection.3.2.1}\protected@file@percent }
 \newlabel{sec:translation-types}{{3.2.1}{10}{Data Types}{subsection.3.2.1}{}}
 \newlabel{sec:translation-types@cref}{{[subsection][1][3,2]3.2.1}{[1][10][]10}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Control Flow}{10}{subsection.3.2.2}\protected@file@percent }
 \newlabel{sec:translation-control}{{3.2.2}{10}{Control Flow}{subsection.3.2.2}{}}
 \newlabel{sec:translation-control@cref}{{[subsection][2][3,2]3.2.2}{[1][10][]10}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Assertions and Properties}{10}{subsection.3.2.3}\protected@file@percent }
-\newlabel{sec:translation-assertions}{{3.2.3}{10}{Assertions and Properties}{subsection.3.2.3}{}}
-\newlabel{sec:translation-assertions@cref}{{[subsection][3][3,2]3.2.3}{[1][10][]10}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Specification and Annotation}{10}{section.3.3}\protected@file@percent }
-\newlabel{sec:annotation}{{3.3}{10}{Specification and Annotation}{section.3.3}{}}
-\newlabel{sec:annotation@cref}{{[section][3][3]3.3}{[1][10][]10}{}{}{}}
 \citation{Stainless}
+\citation{StainlessOriginal}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Translation of the \texttt  {Ackermann} benchmark, demonstrating the conversion from bounded 32-bit integers to unbounded \texttt  {BigInt} to avoid overflow semantics.}}{11}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:datatype-translation}{{3.2}{11}{Translation of the \texttt {Ackermann} benchmark, demonstrating the conversion from bounded 32-bit integers to unbounded \texttt {BigInt} to avoid overflow semantics}{figure.caption.7}{}}
+\newlabel{fig:datatype-translation@cref}{{[figure][2][3]3.2}{[1][10][]11}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Assertions and Properties}{11}{subsection.3.2.3}\protected@file@percent }
+\newlabel{sec:translation-assertions}{{3.2.3}{11}{Assertions and Properties}{subsection.3.2.3}{}}
+\newlabel{sec:translation-assertions@cref}{{[subsection][3][3,2]3.2.3}{[1][11][]11}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Specification and Annotation}{11}{section.3.3}\protected@file@percent }
+\newlabel{sec:annotation}{{3.3}{11}{Specification and Annotation}{section.3.3}{}}
+\newlabel{sec:annotation@cref}{{[section][3][3]3.3}{[1][11][]11}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces The translated Scala \texttt  {sort} method from \texttt  {InsertionSort-FunSat01}, showing loop invariants and termination measures attached to nested loops.}}{12}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:insertion-sort}{{3.3}{12}{The translated Scala \texttt {sort} method from \texttt {InsertionSort-FunSat01}, showing loop invariants and termination measures attached to nested loops}{figure.caption.8}{}}
+\newlabel{fig:insertion-sort@cref}{{[figure][3][3]3.3}{[1][11][]12}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Translation of the \texttt  {SatGcd} benchmark demonstrating a non-trivial termination measure: \texttt  {decreases(y1 + y2)} decreases on every recursive call since each call reduces one argument by the other.}}{12}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:termination-gcd}{{3.4}{12}{Translation of the \texttt {SatGcd} benchmark demonstrating a non-trivial termination measure: \texttt {decreases(y1 + y2)} decreases on every recursive call since each call reduces one argument by the other}{figure.caption.9}{}}
+\newlabel{fig:termination-gcd@cref}{{[figure][4][3]3.4}{[1][12][]12}{}{}{}}
 \citation{Z3}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Experimental Setup}{11}{section.3.4}\protected@file@percent }
-\newlabel{sec:experimental-setup}{{3.4}{11}{Experimental Setup}{section.3.4}{}}
-\newlabel{sec:experimental-setup@cref}{{[section][4][3]3.4}{[1][11][]11}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Data Collection and Analysis}{11}{section.3.5}\protected@file@percent }
-\newlabel{sec:data-collection}{{3.5}{11}{Data Collection and Analysis}{section.3.5}{}}
-\newlabel{sec:data-collection@cref}{{[section][5][3]3.5}{[1][11][]11}{}{}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Design}{13}{chapter.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Translation of the \texttt  {Addition} benchmark demonstrating \texttt  {BigInt} usage, termination measures, and postconditions.}}{13}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:addition-translation}{{3.5}{13}{Translation of the \texttt {Addition} benchmark demonstrating \texttt {BigInt} usage, termination measures, and postconditions}{figure.caption.10}{}}
+\newlabel{fig:addition-translation@cref}{{[figure][5][3]3.5}{[1][12][]13}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Experimental Setup}{13}{section.3.4}\protected@file@percent }
+\newlabel{sec:experimental-setup}{{3.4}{13}{Experimental Setup}{section.3.4}{}}
+\newlabel{sec:experimental-setup@cref}{{[section][4][3]3.4}{[1][12][]13}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Data Collection and Analysis}{13}{section.3.5}\protected@file@percent }
+\newlabel{sec:data-collection}{{3.5}{13}{Data Collection and Analysis}{section.3.5}{}}
+\newlabel{sec:data-collection@cref}{{[section][5][3]3.5}{[1][13][]13}{}{}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Design}{15}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Implementation}{15}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Implementation}{17}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Evaluation}{17}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Evaluation}{19}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\bibstyle{vancouver}
+\bibstyle{plainurl}
 \bibdata{main}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{19}{chapter.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{21}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\bibcite{SV-COMP}{{1}{}{{}}{{}}}
-\bibcite{ModelChecking}{{2}{}{{}}{{}}}
-\bibcite{StaticAnalysis}{{3}{}{{}}{{}}}
-\bibcite{DeductiveVerification}{{4}{}{{}}{{}}}
-\bibcite{SMTSolvers}{{5}{}{{}}{{}}}
-\bibcite{StainlessPureScala}{{6}{}{{}}{{}}}
-\bibcite{KuncakStainlessTutorial}{{7}{}{{}}{{}}}
+\bibcite{SMTSolvers}{{1}{}{{}}{{}}}
+\bibcite{SV-COMP}{{2}{}{{}}{{}}}
+\bibcite{BenchExec}{{3}{}{{}}{{}}}
+\bibcite{SV-COMP2026}{{4}{}{{}}{{}}}
+\bibcite{StainlessOriginal}{{5}{}{{}}{{}}}
+\bibcite{ModelChecking}{{6}{}{{}}{{}}}
+\bibcite{Z3}{{7}{}{{}}{{}}}
 \bibcite{StainlessImperative}{{8}{}{{}}{{}}}
-\bibcite{SV-COMP2026}{{9}{}{{}}{{}}}
-\bibcite{BenchExec}{{10}{}{{}}{{}}}
-\bibcite{SVBenchmarks}{{11}{}{{}}{{}}}
-\bibcite{Z3}{{12}{}{{}}{{}}}
+\bibcite{StainlessPureScala}{{9}{}{{}}{{}}}
+\bibcite{DeductiveVerification}{{10}{}{{}}{{}}}
+\bibcite{KuncakStainlessTutorial}{{11}{}{{}}{{}}}
+\bibcite{StaticAnalysis}{{12}{}{{}}{{}}}
+\bibcite{SVBenchmarks}{{13}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\gdef \@abspage@last{29}
+\gdef \@abspage@last{32}

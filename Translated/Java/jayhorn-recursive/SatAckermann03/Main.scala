@@ -2,6 +2,9 @@ import stainless.lang.*
 
 object SatAckermann03 {
   def ackermann(m: BigInt, n: BigInt): BigInt = {
+    require(m >= 0 && m <= 3 &&
+            n >= 0 && n <= 23)
+    decreases(m, n)
     if (m == 0)
       n + 1
     else if (n == 0)
