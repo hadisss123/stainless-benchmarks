@@ -33,6 +33,12 @@ Edmund~M. Clarke, Orna Grumberg, and Doron~A. Peled.
 \newblock {\em Model Checking}.
 \newblock MIT Press, 1999.
 
+\bibitem{JBMC}
+Lucas~C. Cordeiro, Pascal Kesseli, Daniel Kroening, Peter Schrammel, and Marek Trt{\'{\i}}k.
+\newblock {JBMC}: {A} bounded model checking tool for verifying {Java} bytecode.
+\newblock In {\em Computer Aided Verification ({CAV})}, volume 10981 of {\em Lecture Notes in Computer Science}, pages 183--190, 2018.
+\newblock \href {https://doi.org/10.1007/978-3-319-96145-3_10} {\path{doi:10.1007/978-3-319-96145-3_10}}.
+
 \bibitem{Z3}
 Leonardo de~Moura and Nikolaj Bj{\o}rner.
 \newblock {Z3}: An efficient {SMT} solver.
@@ -56,6 +62,12 @@ Jean{-}Christophe Filli{\^{a}}tre and Andrei Paskevich.
 \newblock Why3: {W}here programs meet provers.
 \newblock In {\em Programming Languages and Systems ({ESOP})}, volume 7792 of {\em Lecture Notes in Computer Science}, pages 125--128, 2013.
 \newblock \href {https://doi.org/10.1007/978-3-642-37036-6_8} {\path{doi:10.1007/978-3-642-37036-6_8}}.
+
+\bibitem{JayHorn}
+Temesghen Kahsai, Philipp R{\"{u}}mmer, Huascar Sanchez, and Martin Sch{\"{a}}f.
+\newblock {JayHorn}: {A} framework for verifying {Java} programs.
+\newblock In {\em Computer Aided Verification ({CAV})}, volume 9780 of {\em Lecture Notes in Computer Science}, pages 352--358, 2016.
+\newblock \href {https://doi.org/10.1007/978-3-319-41540-6_19} {\path{doi:10.1007/978-3-319-41540-6_19}}.
 
 \bibitem{KuncakStainlessTutorial}
 Viktor Kuncak and Jad Hamza.

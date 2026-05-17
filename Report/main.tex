@@ -220,7 +220,7 @@ input ranges, testing them in such a way would be infeasible.
 In response to this, formal verification tools
 developed to provide mathematical guarantees that a program satisfies
 its specifications for \emph{all} valid inputs. An example of such a 
-tool is Stainless~\cite{Stainless}, developed at EPFL for programs written
+tool is Stainless~\cite{StainlessOriginal}, developed at EPFL for programs written
 in the Scala programming language. Stainless is
 a deductive verification framework, meaning that it proves 
 program correctness from formal specifications using mathematical
@@ -532,7 +532,7 @@ program does not throw a runtime exception under any input.
  
 The Java benchmarks in the repository are drawn from a range of sources,
 including test suites from established Java verification tools such as
-\texttt{JayHorn} and \texttt{JBMC}, as well as
+\texttt{JayHorn}~\cite{JayHorn} and \texttt{JBMC}~\cite{JBMC}, as well as
 programs from algorithmic benchmark suites~\cite{SV-COMP2026}.
 This variety means that the tasks range from small programs with a
 single algorithmic pattern to more complex programs with 
@@ -751,7 +751,7 @@ On the other hand, for the \texttt{no-runtime-exception} property, no explicit
 annotations or assertions are required. Stainless automatically 
 verifies the absence of runtime errors such as array out of bounds 
 access and division by zero using its built in verification 
-process~\cite{Stainless}.
+process~\cite{StainlessOriginal}.
  
 % ============================================================
 \section{Specification and Annotation}
@@ -924,10 +924,20 @@ reproducible. The relevant configuration is as follows.
   \item \textbf{SMT solver:} I ran Stainless with its default SMT
         solver configuration, which uses Z3~\cite{Z3} as the primary
         backend.
-  \item \textbf{Resource limits:} 
+  \item \textbf{Resource limits:} To replicate the official 
+  SV-COMP benchmarking environment as closely as possible, 
+  each verification run was constrained to a maximum memory 
+  limit of 15 GB of RAM and a time limit of 15 minutes 
+  (900 seconds).
 \end{itemize}
  
-Unlike the official SV-COMP participants.
+Unlike the official SV-COMP participants, 
+who are evaluated using the \texttt{Benchexec} 
+framework on Linux machines with strict 
+\texttt{cgroups} resource isolation, I conducted 
+the experiments for this project locally on a 
+Windows machine using a custom batch script since 
+\texttt{Benchexec} does not support Windows or WSL. 
 % ============================================================
 \section{Data Collection and Analysis}
 \label{sec:data-collection}
