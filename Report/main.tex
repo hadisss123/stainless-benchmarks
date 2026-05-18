@@ -5,7 +5,7 @@
 \usepackage{graphicx}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[sb]{libertine}
-\usepackage[scale=0.9]{inconsolata}
+%\usepackage[scale=0.9]{inconsolata}
 
 
 
@@ -172,8 +172,9 @@
 %% You can remove this line if you compile with --synctex=1 (see Makefile)
 \synctex=1
 \pagestyle{plain}
-
+\usepackage[scaled=0.75]{beramono}
 \begin{document}
+
 \frontmatter
 \title{Evaluating Stainless on SV-COMP}
 \author{Hadi Saleh}
@@ -191,7 +192,6 @@ eget dui. Vestibulum eu auctor nisi. Morbi pharetra euismod velit
 ac mattis. Maecenas tempor vitae augue ut aliquam. Nunc auctor,
 nibh at imperdiet finibus, ex leo semper lacus, ac vehicula quam
 nisl condimentum leo.
-
 
 \tableofcontents
 \listoffigures
@@ -376,7 +376,7 @@ For each condition, Stainless reports one of four verdicts,
 \texttt{valid}, \texttt{invalid} (with a counterexample), 
 \texttt{timeout} or \texttt{unknown}.
 
-The \texttt{add} function from Listing~\ref{lst:add} is a simple example
+The \texttt{add} function from \autoref{lst:add} is a simple example
 of a Scala function that is annotated with preconditions
 using \texttt{require} and postconditions using \texttt{ensuring}.
 The \texttt{require} condition is checked once the function is called
@@ -604,8 +604,8 @@ based on these criteria:
 \begin{figure}[t]
 \begin{lstlisting}[language=Java, basicstyle=\ttfamily\scriptsize]
 import org.sosy_lab.sv_benchmarks.Verifier;
-import rbtree.RedBlackTree;
-import rbtree.RedBlackTreeNode;
+import rbtree.RedBlackTree; // External Java packages which are not supported by Stainless 
+import rbtree.RedBlackTreeNode; // External Java packages which are not supported by Stainless 
 
 public class Main {
   public static void main(String[] args) {
@@ -637,7 +637,7 @@ For example, the \texttt{RedBlackTree} benchmarks from the
 \texttt{algorithms} category were excluded because they rely 
 heavily on external package imports
 and exception handling, which aren't directly translatable to Stainless's 
-Pure Scala subset. \Cref{fig:excluded-benchmark} illustrates this 
+Pure Scala subset. \autoref{fig:excluded-benchmark} illustrates this 
 untranslatable structure.
 
 Within the remaining translatable benchmarks, I chose a representative subset 
@@ -685,11 +685,11 @@ which would require modular arithmetic and would complicate the verification
 process significantly.
 
 An example of this can be seen in the translation of the \texttt{Ackermann}
-benchmark, which is shown in \cref{fig:datatype-translation}.
+benchmark, which is shown in \autoref{fig:datatype-translation}.
 
 \begin{figure}[htbp]
 \begin{minipage}[t]{0.48\textwidth}
-\textbf{Original Java (32 bit int):}
+Original Java (32 bit int):
 \begin{lstlisting}[language=Java, basicstyle=\ttfamily\scriptsize]
 public static int ack(int m, int n) {
     if (m == 0) {
@@ -704,7 +704,7 @@ public static int ack(int m, int n) {
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
-\textbf{Translated Scala (Unbounded BigInt):}
+Translated Scala (Unbounded BigInt):
 \begin{lstlisting}[language=Scala, basicstyle=\ttfamily\scriptsize]
 def ack(m: BigInt, n: BigInt): BigInt = {
     if (m == 0)
@@ -776,7 +776,7 @@ the loop was intended to do, as well as knowing whether the benchmark was expect
 to pass or fail, made it easier to determine what mathematical properties 
 needed to be tracked during verification.
 
-\Cref{fig:insertion-sort} shows an example of a translated benchmark with loop invariants.
+\autoref{fig:insertion-sort} shows an example of a translated benchmark with loop invariants.
 The original benchmark is \texttt{InsertionSort-FunSat01}.
 
 \begin{figure}[t]
@@ -810,14 +810,14 @@ ensure that a non-terminating function cannot trivially satisfy any
 postcondition~\cite{StainlessOriginal}. For recursive benchmarks,
 a termination measure is provided using the \texttt{decreases} clause.
 The measure must be an expression that strictly decreases on every
-recursive call and is bounded below. \Cref{fig:termination-gcd} shows
+recursive call and is bounded below. \autoref{fig:termination-gcd} shows
 an example from the \texttt{SatGcd} benchmark, where the sum \texttt{y1 + y2}
 serves as the measure: each recursive call either reduces \texttt{y1} or
 \texttt{y2} by the other, so the sum strictly decreases.
 
 \begin{figure}[htbp]
-\begin{minipage}[t]{0.48\textwidth}
-\textbf{Original Java:}
+\begin{minipage}[t]{0.4\textwidth}
+Original Java:
 \begin{lstlisting}[language=Java, basicstyle=\ttfamily\scriptsize]
 static int gcd(int y1, int y2) {
   if (y1 <= 0 || y2 <= 0)
@@ -832,7 +832,7 @@ static int gcd(int y1, int y2) {
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
-\textbf{Translated Scala:}
+Translated Scala:
 \begin{lstlisting}[language=Scala, basicstyle=\ttfamily\scriptsize]
 def gcd(y1: BigInt, y2: BigInt): BigInt = {
   decreases(y1 + y2)
@@ -867,14 +867,14 @@ The amount of annotation required varies across the benchmarks.
 Simple programs often require no annotation beyond the
 assertion itself, while other benchmarks with loops and complex
 logic may require more significant annotation effort.
-\Cref{fig:addition-translation} illustrates a fully annotated recursive
+\autoref{fig:addition-translation} illustrates a fully annotated recursive
 benchmark, showing the combination of \texttt{BigInt} types, a
 \texttt{decreases} termination measure, and an \texttt{.ensuring}
 postcondition in the \texttt{Addition} benchmark.
 
 \begin{figure}[t]
-\begin{minipage}[t]{0.48\textwidth}
-\textbf{Original Java:}
+\begin{minipage}[t]{0.4\textwidth}
+Original Java:
 \begin{lstlisting}[language=Java, basicstyle=\ttfamily\scriptsize]
 static int addition(int m, int n) { 
   if (n == 0) {
@@ -889,7 +889,7 @@ static int addition(int m, int n) {
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
-\textbf{Translated Scala (with annotations):}
+Translated Scala (with annotations):
 \begin{lstlisting}[language=Scala, basicstyle=\ttfamily\scriptsize]
 def addition(m: BigInt, n: BigInt): BigInt = {
   decreases(if (n >= 0) n else -n)
