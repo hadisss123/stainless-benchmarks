@@ -2,3 +2,7 @@
 *.class
 .stainless-cache/
 automationTranslate.py
+Report/
+Test1.scala
+HelloStainless.scala
+Fibonacci.scala
